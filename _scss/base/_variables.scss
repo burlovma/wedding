@@ -33,6 +33,15 @@ $container-md: em(740);
 $container-sm: em(670);
 
 // ----------------------------------------------------------------------
+// Images
+// ----------------------------------------------------------------------
+$img-path: '/images/wedding/';
+$barn: $img-path + 'barn.jpg';
+$car: $img-path + 'cancun-car.jpg';
+$thailand-phuket5: $img-path + 'thailand-phuket5.jpg';
+$thailand-phuket7: $img-path + 'thailand-phuket7.jpg';
+
+// ----------------------------------------------------------------------
 // Other
 // ----------------------------------------------------------------------
 $slow-animation-timing: .3s;

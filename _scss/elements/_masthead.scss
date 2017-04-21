@@ -1,32 +1,58 @@
 
 
+// .parallax-image {
+//   min-height: 200px;
+//   overflow: hidden;
+//   position: relative;
+
+//   .full-width-image {
+//     height: 100%;
+//     overflow: hidden;
+//     position: absolute;
+//     top: 0;
+//     width: 100%;
+
+//     img {
+//       left: -1000px;
+//       margin: 0 auto;
+//       min-width: 100%;
+//       min-height: 100%;
+//       position: absolute;
+//       right: -1000px;
+//       top: 0;
+//       width: 100%;
+//     }
+//   }
+
+//   &.standard {
+//     height: 0;
+//     padding: 0 0 56.25%;
+//   }
+// }
+
 .parallax-image {
-  min-height: 200px;
+  height: 0;
   overflow: hidden;
+  padding-bottom: 40%;
   position: relative;
 
+  &.standard { padding-bottom: 56.25%; }
+
   .full-width-image {
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
+    margin: 0 auto;
     overflow: hidden;
     position: absolute;
     top: 0;
     width: 100%;
 
-    img {
-      left: -1000px;
-      margin: 0 auto;
-      min-width: 100%;
-      min-height: 100%;
-      position: absolute;
-      right: -1000px;
-      top: 0;
-      width: 100%;
-    }
-  }
-
-  &.standard {
-    height: 0;
-    padding: 0 0 56.25%;
+    &#barn { background-image: url($barn); }
+    &#car { background-image: url($car); }
+    &#thailand-phuket5 { background-image: url($thailand-phuket5); }
+    &#thailand-phuket7 { background-image: url($thailand-phuket7); }
   }
 }
 

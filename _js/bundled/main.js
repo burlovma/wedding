@@ -48,7 +48,7 @@ var ParallaxImg = require('ParallaxImage');
 (function () {
     'use strict';
 
-    new ParallaxImg();
+    // new ParallaxImg();
 })();
 
 },{"ParallaxImage":"ParallaxImage"}],"Helper":[function(require,module,exports){
