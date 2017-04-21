@@ -36,10 +36,52 @@ $container-sm: em(670);
 // Images
 // ----------------------------------------------------------------------
 $img-path: '/images/wedding/';
-$barn: $img-path + 'barn.jpg';
-$car: $img-path + 'cancun-car.jpg';
-$thailand-phuket5: $img-path + 'thailand-phuket5.jpg';
-$thailand-phuket7: $img-path + 'thailand-phuket7.jpg';
+
+// just listing out everything in the directory
+$images: (
+    barn: $img-path + 'barn.jpg',
+    brewery: $img-path + 'brewery.jpg',
+    brewery2: $img-path + 'brewery2.jpg',
+    cancun: $img-path + 'cancun.jpg',
+    cancun-beach: $img-path + 'cancun-beach.jpg',
+    cancun-bus: $img-path + 'cancun-bus.jpg',
+    cancun-car: $img-path + 'cancun-car.jpg',
+    cancun-shots: $img-path + 'cancun-shots.jpg',
+    concert: $img-path + 'concert.jpg',
+    el-castillo: $img-path + 'el-castillo.jpg',
+    fountain: $img-path + 'fountain.jpg',
+    gym: $img-path + 'gym.jpg',
+    kellys-wedding: $img-path + 'kellys-wedding.jpg',
+    kellys-wedding2: $img-path + 'kellys-wedding2.jpg',
+    kite-fest: $img-path + 'kite-fest.jpg',
+    monument: $img-path + 'monument.jpg',
+    mount-vernon: $img-path + 'mount-vernon.jpg',
+    nats-game: $img-path + 'nats-game.jpg',
+    pond: $img-path + 'pond.jpg',
+    pumpkins: $img-path + 'pumpkins.jpg',
+    rainbow: $img-path + 'rainbow.jpg',
+    stock1: $img-path + 'stock1.jpg',
+    stock2: $img-path + 'stock2.jpg',
+    stock3: $img-path + 'stock3.jpg',
+    stock4: $img-path + 'stock4.jpg',
+    stock5: $img-path + 'stock5.jpg',
+    stock6: $img-path + 'stock6.jpg',
+    thailand-chiangmai: $img-path + 'thailand-chiangmai.jpg',
+    thailand-dinner: $img-path + 'thailand-dinner.jpg',
+    thailand-kayak: $img-path + 'thailand-kayak.jpg',
+    thailand-kayak2: $img-path + 'thailand-kayak2.jpg',
+    thailand-phuket: $img-path + 'thailand-phuket.jpg',
+    thailand-phuket2: $img-path + 'thailand-phuket2.jpg',
+    thailand-phuket3: $img-path + 'thailand-phuket3.jpg',
+    thailand-phuket4: $img-path + 'thailand-phuket4.jpg',
+    thailand-phuket5: $img-path + 'thailand-phuket5.jpg',
+    thailand-phuket6: $img-path + 'thailand-phuket6.jpg',
+    thailand-phuket7: $img-path + 'thailand-phuket7.jpg',
+    thailand-proposal: $img-path + 'thailand-proposal.jpg',
+    tulum: $img-path + 'tulum.jpg',
+    valladolid: $img-path + 'valladolid.jpg',
+    white-house: $img-path + 'white-house.jpg'
+);
 
 // ----------------------------------------------------------------------
 // Other
