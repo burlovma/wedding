@@ -1,0 +1,44 @@
+// ----------------------------------------------------------------------
+// Breakpoints
+// ----------------------------------------------------------------------
+$screen-mobile-max: em(480);
+$screen-sm-min: em(768);
+$screen-md-min: em(992);
+$screen-md-max: em(1155);
+$screen-lg-min: em(1210);
+$screen-lg-md: em(1600);
+
+// ----------------------------------------------------------------------
+// Font Families
+// ----------------------------------------------------------------------
+// $font-family: 'Oswald', sans-serif;
+$font-family: 'Roboto', sans-serif;
+$condensed-font-family: 'Roboto Condensed', sans-serif;
+// $accent-font-family: 'Lavanderia', cursive;
+$font-awesome: 'FontAwesome';
+
+// ----------------------------------------------------------------------
+// Grid
+// ----------------------------------------------------------------------
+
+// Used in grid-system.scss
+// Number of columns in the grid.
+$grid-columns: 12 !default;
+
+// Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width: 30px !default;
+
+$container: em(1050); // border-box includes padding in the width
+$container-md: em(740);
+$container-sm: em(670);
+
+// ----------------------------------------------------------------------
+// Other
+// ----------------------------------------------------------------------
+$slow-animation-timing: .3s;
+$animation-timing: .25s;
+$fast-animation-timing: .2s;
+$super-fast-animation-timing: .15s;
+$super-super-fast-animation-timing: .05s;
+
+

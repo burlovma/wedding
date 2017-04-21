@@ -1,0 +1,199 @@
+
+form {
+  input,
+  textarea {
+    border: 1px solid $black;
+    box-shadow: none;
+    font: 400 1em $font-family;
+    outline: none;
+    padding: 10px 10px 8px;
+    width: 100%;
+
+    @include appearance(none);
+
+    &.invalid { border-color: red; }
+
+    // &:focus { border-color: $input-focus; }
+  }
+
+  .validation {
+    color: red;
+    display: none;
+    font-weight: 600;
+    padding: 5px 0;
+  }
+
+  .invalid ~ .validation { display: inline-block; }
+
+  input[type='radio'] {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    width: 15px;
+
+    @include appearance(radio);
+  }
+
+  textarea { height: 100px; }
+
+  input[type='submit'] { cursor: pointer; }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    margin-left: -2em;
+    padding: 0;
+    position: absolute;
+    width: auto;
+
+    @include opacity(0);
+
+    // @include appearance(checkbox);
+  }
+
+  input[type='checkbox'] ~ label,
+  input[type='radio'] ~ label {
+    cursor: pointer;
+    // display: inline-block;
+    // margin: 0;
+  }
+
+  // old color #0071bc
+  input[type='checkbox'] ~ label:before,
+  input[type='radio'] ~ label:before {
+    background: transparent;
+    border: 1px solid $black;
+    content: '';
+    display: inline-block;
+    font-family: $font-awesome;
+    height: 1.35em;
+    line-height: 1.125;
+    margin-right: em(10);
+    text-indent: 0.15em;
+    vertical-align: middle;
+    width: 1.35em;
+  }
+
+  input[type='checkbox']:checked ~ label:before,
+  input[type='radio']:checked ~ label:before {
+    content: $fa-var-check;
+  }
+
+  select {
+    background: transparent;
+    border-radius: 0;
+    border-width: 0;
+    box-shadow: none;
+    cursor: pointer;
+    font: 400 .8em/1.5 $font-family;
+    outline: none;
+    padding: 9px 50px 9px 20px;
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 1;
+
+    @include appearance(none);
+
+    &:-ms-expand { /* for IE 11 */
+      display: none;
+    }
+  }
+
+  .select-div {
+    border: 1px solid $black;
+    position: relative;
+
+    &:before {
+      background: $gray;
+      content: '';
+      display: block;
+      height: 15px;
+      position: absolute;
+      right: em(40);
+      top: em(10);
+      width: 1px;
+      z-index: 2;
+    }
+
+    &:after {
+      // content: '\25BE';
+      content: $fa-var-angle-down;
+      font-family: $font-awesome;
+      position: absolute;
+      right: em(15);
+      top: em(6);
+    }
+  }
+
+  .radio-label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .field-block {
+    margin: 0 0 em(25);
+
+    &.hidden {
+      @extend .hidden;
+
+      display: none;
+      margin: 0;
+    }
+  }
+
+  .field-row {
+    @include row(true);
+
+    .half {
+      @include span(12);
+
+      &:first-child { margin: 0 0 em(25); }
+    }
+
+    .full { @include span(12); }
+
+    &.expandable {
+      max-height: 200px;
+      overflow: hidden;
+
+      @include custom-transition(max-height $animation-timing ease);
+
+      &.hide { max-height: 0; }
+    }
+  }
+
+  label {
+    display: block;
+    margin: 0 0 em(5);
+  }
+
+  button {
+    cursor: pointer;
+    outline: none;
+  }
+
+  .submit-form {
+    text-align: center;
+
+    button {
+      background: transparent;
+      @include custom-btn();
+    }
+  }
+}
+
+p.error { color: red; }
+
+
+@include breakpoints(tablet) {
+  form {
+    .field-row .half {
+      @include span(6);
+
+      &:first-child { margin: 0; }
+    }
+  }
+}
+
+
+

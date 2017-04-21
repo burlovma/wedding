@@ -1,0 +1,12 @@
+// ----------------------------------------------------------------------
+
+  // Appearance
+
+// ----------------------------------------------------------------------
+
+// example: @include appearance('checkbox');
+
+@mixin appearance($val) {
+  -moz-appearance: $val;
+  -webkit-appearance: $val;
+}

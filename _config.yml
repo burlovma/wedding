@@ -1,0 +1,15 @@
+# setting env to production will minify the html
+#env: production
+env: dev
+
+exclude: ['Gruntfile.js', 'package.json', 'readme.md', 'node_modules']
+    
+gems:
+  - octopress-minify-html
+  
+sass:
+  sass_dir: _scss
+  style: compressed
+
+title: wedding
+

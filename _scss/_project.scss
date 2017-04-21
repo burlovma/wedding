@@ -1,0 +1,39 @@
+
+
+/* project styles go here */
+
+@import 'elements/header';
+@import 'elements/masthead';
+@import 'elements/gallery';
+@import 'elements/forms';
+// @import 'elements/overlay';
+@import 'elements/footer';
+
+.section-break {
+  border-color: $border-color;
+  border-width: 1px 0;
+  border-style: solid;
+  text-align: center;
+
+  &.rsvp-form {
+    text-align: left;
+
+    h4 { margin-bottom: em(6, 24); }
+  }
+
+  .inner-container {
+    @include breakpoints(nav) {
+      @include span(10);
+      @include offset(1);
+    }
+
+    @include breakpoints(lg_tablet) {
+      @include span(8);
+      @include offset(2);
+    }
+  }
+
+  h4 { text-align: center; }
+
+  a { @include custom-btn(); }
+}

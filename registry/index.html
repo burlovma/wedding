@@ -1,0 +1,31 @@
+---
+layout: default
+active: registry
+title: Registry | Melissa &amp; Brett
+---
+
+<section class="hero-header">
+    <div class="masthead page-banner parallax-image">
+        <div class="full-width-image">
+            <img src="/images/wedding/stock5.jpg" alt="stock imagery" />
+        </div>
+        <div class="container hero-header-txt">
+            <h1 class="thin">Registry</h1>
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="container">
+        <div class="inner-container">
+            {% for item in site.data.registry %}
+            <div class="block">
+                <span class="img">
+                    <img src="{{ item.img }}" alt="{{ item.alt }}" />
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+

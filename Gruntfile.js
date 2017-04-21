@@ -17,7 +17,19 @@ module.exports = function(grunt) {
         browserify: {
             libs: {
                 files: {
-                    '_js/main.js': '_js/main.js'
+                    '_js/bundled/main.js': ['_js/main.js', '_js/parallax-images.js']
+                },
+                options: {
+                    transform: ['babelify'],
+                    alias: [
+                        './_js/globals/modules/Helper.js:Helper',
+                        './_js/globals/modules/ParallaxImage.js:ParallaxImage'
+                    ]
+                }
+            },
+            rsvp: {
+                files: {
+                    '_js/bundled/rsvp.js': '_js/rsvp.js'
                 },
                 options: {
                     transform: ['babelify'],
@@ -38,7 +50,7 @@ module.exports = function(grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n\n   Written by Brett Nolf \n\n',
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */',
                 mangle: true,
                 compress: true,
                 beautify: false
@@ -46,7 +58,8 @@ module.exports = function(grunt) {
             build: {
                 files: [{
                     src: [
-                        '_js/main.js'
+                        '_js/bundled/main.js',
+                        '_js/bundled/rsvp.js'
                     ],
                     dest: 'js/<%= pkg.name %>.min.js'
                 }]

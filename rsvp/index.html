@@ -1,0 +1,78 @@
+---
+layout: default
+active: rsvp
+title: RSVP | Melissa &amp; Brett
+---
+
+<section class="hero-header">
+    <div class="masthead parallax-image">
+        <div class="full-width-image">
+            <img src="/images/wedding/stock6.jpg" alt="stock imagery" />
+        </div>
+        <div class="container hero-header-txt">
+            <h1 class="thin">RSVP</h1>
+        </div>
+    </div>
+</section>
+
+<section class="section-break rsvp-form">
+    <div class="container">
+        <div class="inner-container">
+            <h4>We can't wait to celebrate with you!</h4>
+            <p class="small center">Kindly respond by March 1, 2018.</p>
+
+            <form onsubmit="return false;" id="rsvp-form">
+                <div class="field-row">
+                    <div class="field-block full">
+                        <label for="invitee_email">Email</label>
+                        <input type="text" id="invitee_email" name="invitee_email" value="" />
+                    </div>
+                </div>
+                <div class="field-row">
+                    <div class="field-block half">
+                        <label for="invitee_name">Name</label>
+                        <input type="text" id="invitee_name" name="invitee_name" value="" />
+                    </div>
+                    <div class="field-block half">
+                        <label for="invitee_food">Entreé</label>
+                        <div class="select-div">
+                            <select name="invitee_food">
+                                <option value="food1">Chicken</option>
+                                <option value="food2">Steak</option>
+                                <option value="food3">Vegetarian</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-block">
+                    <input type="checkbox" id="plus_one" name="plus_one" checked="" />
+                    <label for="plus_one">Yes, I'm bringing a plus one</label>
+                </div>
+                <div class="field-row expandable">
+                    <div class="field-block half">
+                        <label for="guest_name">Guest Name</label>
+                        <input type="text" id="guest_name" name="guest_name" value="" />
+                    </div>
+                    <div class="field-block half">
+                        <label for="guest_food">Guest Entreé</label>
+                        <div class="select-div">
+                            <select name="guest_food">
+                                <option value="food1">Chicken</option>
+                                <option value="food2">Steak</option>
+                                <option value="food3">Vegetarian</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-block">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message"></textarea>
+                </div>
+                <div class="submit-form">
+                    <button name="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+

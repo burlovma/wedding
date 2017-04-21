@@ -1,0 +1,49 @@
+// ----------------------------------------------------------------------
+
+// Transform
+
+// ----------------------------------------------------------------------
+
+// example: @include transform(translate, 0, 0);
+// update: can use @include transform(none);
+
+@mixin transform($type, $values...) {
+  $i: 1;
+  $n: 0;
+  $transform: $type;
+
+  @if length($values) {
+    $n: length($values);
+  }
+
+  $originVal: ();
+
+  @while $i <= $n {
+    $val: nth($values, $i);
+
+    @if $type == "rotate" or $type == "rotateY" or $type == "rotateX" {
+      $originVal: append($originVal, $val + deg);
+    }
+    @else {
+      $originVal: append($originVal, $val);
+    }
+
+    $i: $i + 1;
+  }
+
+  @if $type != "none" {
+    $transform: unquote("#{$type}(#{$originVal})");
+  }
+
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  transform: $transform;
+  -ms-transform: $transform;
+}
+
+@mixin transform-origin($val) {
+  -webkit-transform-origin: $val;
+  -moz-transform-origin: $val;
+  transform-origin: $val;
+  -ms-transform-origin: $val;
+}

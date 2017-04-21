@@ -1,0 +1,40 @@
+
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+.container {
+  @include container-fixed();
+  margin: em(50) auto;
+  overflow: hidden;
+
+  .inner-container {
+    overflow: hidden;
+    padding: 0;
+  }
+
+  // 480+
+  @include breakpoints(nav) {
+    margin: em(60) auto;
+    max-width: $container-sm;
+  }
+
+  // 768+
+  @include breakpoints(tablet) {
+    max-width: $container-md;
+  }
+
+  // 992+
+  @include breakpoints(lg_tablet) {
+    margin: em(100) auto;
+    max-width: $container;
+
+    .inner-container {
+      padding-left: floor(($grid-gutter-width / 2));
+      padding-right: ceil(($grid-gutter-width / 2));
+    }
+  }
+}

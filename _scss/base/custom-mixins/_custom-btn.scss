@@ -1,0 +1,19 @@
+
+
+@mixin custom-btn() {
+    border: 2px solid $black;
+    display: inline-block;
+    font: 500 .8em/1.5 $font-family;
+    letter-spacing: 2px;
+    padding: 15px 25px;
+    text-transform: uppercase;
+
+    @include custom-transition(background $animation-timing ease, color $animation-timing ease);
+
+    &:hover,
+    &:focus {
+      background: $black;
+      color: $white;
+      text-decoration: none;
+    }
+}

@@ -1,0 +1,25 @@
+-
+    network: facebook
+    url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmelissaheartsbrett.com
+    message: 'Share on Facebook'
+    icon: facebook
+-
+    network: twitter
+    url: https://twitter.com/home?status=http%3A%2F%2Fmelissaheartsbrett.com%20%23MelissaHeartsBrett%20%23Wedding%20%23May2018
+    message: 'Share on Twitter'
+    icon: twitter
+-
+    network: pinterest
+    url: https://pinterest.com/pin/create/button/?url=http%3A%2F%2Fmelissaheartsbrett.com&media=http%3A%2F%2Fmelissaheartsbrett.com/images/wedding/og-image.jpg&description=View%20wedding%20details,%20get%20directions,%20rsvp,%20and%20more!
+    message: 'Share on Pinterest'
+    icon: pinterest-p
+-
+    network: email
+    url: mailto:?&subject=Melissa%20and%20Brett's%20wedding%20website&body=http%3A%2F%2Fmelissaheartsbrett.com%0A%0AView%20wedding%20details,%20get%20directions,%20rsvp,%20and%20more!
+    message: 'Share via Email'
+    icon: envelope-o
+-
+    network: github
+    url: https://github.com/brettnolf/wedding
+    message: 'Check out the code on GitHub'
+    icon: github

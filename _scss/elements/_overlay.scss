@@ -1,0 +1,104 @@
+
+
+
+.overlay {
+  background: transparentize($black, .2);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+
+  @include custom-transition(opacity $slow-animation-timing ease, z-index $slow-animation-timing ease);
+  @include opacity(0);
+
+  &.visible {
+    @include opacity(1);
+    z-index: 100;
+  }
+
+  .o-container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+
+    .o-inner-container {
+      background: $white;
+      padding: em(60);
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  .close-overlay {
+    height: 4rem;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 4rem;
+
+    i { line-height: 4rem; }
+  }
+
+  a {
+    @include replace-text();
+
+    i {
+      color: $dark-gray-color;
+      font-size: 1.5rem;
+
+      @include custom-transition(color $animation-timing ease);
+    }
+
+    &:hover,
+    &:focus {
+      i { color: $black; }
+    }
+  }
+
+  ul {
+    text-align: center;
+
+    li {
+      margin-bottom: 1.625em;
+
+      &:first-child {
+        display: none;
+      }
+
+      a {
+        display: block;
+        padding: 0 10px;
+      }
+
+      i { font-size: 1.5rem; }
+    }
+  }
+
+  @media (min-width: em(500)) {
+    .close-overlay {
+      height: 2.5rem;
+      width: 2.5rem;
+
+      i { line-height: 2.5rem; }
+    }
+
+    ul li {
+      display: inline-block;
+      margin: 0;
+
+      &:first-child {
+        color: $dark-gray-color;
+        display: inline-block;
+        font: 600 2rem/1.5 $font-family;
+        padding: 0 10px;
+      }
+
+      i { font-size: 2rem; }
+    }
+  }
+}

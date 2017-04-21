@@ -1,0 +1,30 @@
+
+
+// ----------------------------------------------------------------------
+// Social Branding Colors
+// ----------------------------------------------------------------------
+
+$social-branding: (
+  twitter: #55acee,
+  google: #db4437,
+  facebook: #3b5999,
+  linkedin: #0077b5,
+  pinterest: #bd081c,
+  reddit: #ff4500,
+  email: #2f2f2f,
+  print: #2f2f2f
+);
+
+// ----------------------------------------------------------------------
+// Colors 
+// ----------------------------------------------------------------------
+$black: #000;
+$white: #fff;
+$gray: #7f7f7f;
+$beige: #f5f5dc;
+$secondary-background-color: #231f20;
+$dark-gray-color: #57584f;
+$captions-background-color: #2f312b;
+$light-gray-color: #f7f7f7;
+$lighter-gray-color: #f2f2f2;
+$border-color: darken($light-gray-color, 5);

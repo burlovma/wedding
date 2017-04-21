@@ -6,3 +6,6 @@ json
 .sass-cache
 _site
 .jekyll-metadata
+fonts
+.vscode
+images

@@ -1,0 +1,67 @@
+---
+layout: default
+active: main
+title: Melissa &amp; Brett
+---
+
+<section class="hero-header">
+    {% include masthead.html %}
+</section>
+
+<section class="section-break">
+    <div class="container">
+        <div class="inner-container">
+            <h4>Our Story</h4>
+            <p class="slightly-larger">We met at work...</p>
+            <p>Our mutual friends Kylla and Miki set us up originally, thinking we'd be perfect for each other. After our first date, we both decided we weren't interested! But several months later we happened to go on the same group camping trip, and saw each other in a new light. We fell in love. And we can't wait to spend the rest of our lives together.</p>
+        </div>
+    </div>
+</section>
+
+<section class="hero-header">
+    <div class="masthead standard parallax-image">
+        <div class="full-width-image">
+            <img src="/images/wedding/cancun-car.jpg" alt="melissa and brett goofing around in mexico" />
+        </div>
+        <div class="hero-header-txt">
+            <h1 class="thin">Best Friends</h1>
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="container">
+        <div class="inner-container">
+            {% for item in site.data.photos %}
+            <div class="block">
+                <span class="img">
+                    <img src="{{ item.img }}" alt="{{ item.alt }}" />
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="hero-header">
+    <div class="masthead standard parallax-image">
+        <div class="full-width-image">
+            <img src="/images/wedding/thailand-phuket5.jpg" alt="melissa and brett in phuket" />
+        </div>
+        <div class="hero-header-txt">
+            <h1 class="thin">He Proposed</h1>
+        </div>
+    </div>
+</section>
+
+<section class="hero-header">
+    <div class="masthead standard parallax-image">
+        <div class="full-width-image">
+            <img src="/images/wedding/thailand-phuket7.jpg" alt="melissa pondering life with brett" />
+        </div>
+        <div class="hero-header-txt">
+            <h1 class="thin">She said yes</h1>
+        </div>
+    </div>
+</section>
+

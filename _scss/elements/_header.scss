@@ -1,0 +1,150 @@
+
+$header-height: em(69);
+
+@mixin line() {
+  background: $black;
+  height: 1px;
+  right: 15px;
+  position: absolute;
+
+  @include custom-transition(all $animation-timing ease);
+}
+
+header {
+
+  .menu-btn {
+    cursor: pointer;
+    height: 60px;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 60px;
+    z-index: 11;
+
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      @include replace-text();
+
+      &:after,
+      &:before {
+        @include line();
+        content: '';
+        display: block;
+        width: 25px;
+      }
+
+      &:before { top: 20px; }
+
+      &:after { top: 40px; }
+    }
+
+    span {
+      @include line();
+      top: 30px;
+      width: 15px;
+    }
+  }
+
+  &.open .menu-btn {
+    a {
+      &:after,
+      &:before { top: 30px; }
+
+      &:after { @include rotate(45); }
+
+      &:before { @include rotate(-45); }
+    }
+
+    span { right: -100%; }
+  }
+
+  nav {
+    align-items: center;
+    background: $white;
+    display: flex;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    @include custom-transition(transform $animation-timing ease, opacity $animation-timing ease);
+    @include transform(translateY, -100%);
+  }
+
+  &.open nav {
+    opacity: 1;
+    @include transform(translateY, 0);
+  }
+
+  ul {
+    text-align: center;
+    width: 100%;
+
+    li {
+      margin: em(15);
+
+      a {
+        display: block;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus { text-decoration: none; }
+      }
+    }
+  }
+
+  @include breakpoints(tablet) {
+    height: $header-height;
+
+    .menu-btn { display: none; }
+
+    nav {
+      border-bottom: 1px solid $border-color;
+      display: block;
+      height: $header-height;
+      left: 0;
+      opacity: 1;
+
+      @include custom-transition(none);
+      @include transform(translateY, 0);
+    }
+
+    ul {
+
+      li {
+        display: inline-block;
+        margin: 0;
+        // box-shadow: 10px 5px 5px black;
+
+        a {
+          line-height: em(66);
+          padding: 0 20px;
+
+          &:after {
+            background: currentColor;
+            content: '';
+            display: block;
+            height: 3px;
+            // margin-top: 10px; // any margin?
+            @include scale(0);
+            @include custom-transition(transform .25s ease);
+          }
+
+          &:hover,
+          &:focus {
+            &:after {
+              @include scale(1);
+            }
+          }
+
+          &.active:after { @include scale(1); }
+        }
+      }
+    }
+  }
+}

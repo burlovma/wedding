@@ -1,0 +1,55 @@
+
+
+
+@mixin breakpoints($points) {
+  @each $point in $points {
+    @include do-breakpoint(#{$point}) {
+      @content;
+    }
+  }
+}
+
+@mixin do-breakpoint($point) {
+  @if $point == nav {
+    // min-width 480px - 30em
+    @media (min-width: $screen-mobile-max) {
+      @content;
+    }
+  }
+  @else if $point == tablet {
+    // min width 768 - 48em
+    @media (min-width: $screen-sm-min) {
+      @content;
+    }
+  }
+  @else if $point == lg_tablet {
+    // min width 992px - 62em
+    @media (min-width: $screen-md-min) {
+      @content;
+    }
+  }
+  @else if $point == sm_desktop {
+    // min width 1155px - 72.188em
+    @media (min-width: $screen-md-max) {
+      @content;
+    }
+  }
+  @else if $point == desktop {
+    // min width 1210 - 75.625em
+    @media (min-width: $screen-lg-min) {
+      @content;
+    }
+  }
+  @else if $point == large {
+    // min width 1600 - 100em
+    @media (min-width: $screen-lg-md) {
+      @content;
+    }
+  }
+  @else if $point == really_big {
+    // min width 1600 - 100em
+    @media (min-width: $screen-lg-md) {
+      @content;
+    }
+  }
+}
