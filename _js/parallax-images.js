@@ -5,5 +5,5 @@ var ParallaxImg = require('ParallaxImage');
 (function() {
     'use strict';
 
-    // new ParallaxImg();
+    new ParallaxImg();
 })();

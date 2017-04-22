@@ -1,34 +1,6 @@
 
 
-// .parallax-image {
-//   min-height: 200px;
-//   overflow: hidden;
-//   position: relative;
 
-//   .full-width-image {
-//     height: 100%;
-//     overflow: hidden;
-//     position: absolute;
-//     top: 0;
-//     width: 100%;
-
-//     img {
-//       left: -1000px;
-//       margin: 0 auto;
-//       min-width: 100%;
-//       min-height: 100%;
-//       position: absolute;
-//       right: -1000px;
-//       top: 0;
-//       width: 100%;
-//     }
-//   }
-
-//   &.standard {
-//     height: 0;
-//     padding: 0 0 56.25%;
-//   }
-// }
 
 section .parallax-image-container,
 section .parallax-image-container .hero-header-txt { max-height: em(600); }
