@@ -1,32 +1,35 @@
 
 
+
+
+section .parallax-image-container,
+section .parallax-image-container .hero-header-txt { max-height: em(600); }
+
 .parallax-image {
-  min-height: 200px;
+  height: 0;
   overflow: hidden;
+  padding-bottom: 56.25%;
   position: relative;
 
   .full-width-image {
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
+    margin: 0 auto;
     overflow: hidden;
     position: absolute;
     top: 0;
     width: 100%;
 
-    img {
-      left: -1000px;
-      margin: 0 auto;
-      min-width: 100%;
-      min-height: 100%;
-      position: absolute;
-      right: -1000px;
-      top: 0;
-      width: 100%;
-    }
-  }
+    $backgrounds: 'barn', 'cancun-car', 'thailand-phuket2', 'thailand-phuket4', 'thailand-phuket5',
+                  'thailand-phuket7', 'stock1', 'stock4', 'stock5', 'stock6';
 
-  &.standard {
-    height: 0;
-    padding: 0 0 56.25%;
+    @each $background in $backgrounds {
+      $img: map-get($images, $background);
+
+      &##{$background} { background-image: url($img); }
+    }
   }
 }
 
@@ -35,6 +38,7 @@
   .hero-header-txt {
     align-items: center;
     display: flex;
+    height: 100%;
     justify-content: center;
     position: relative;
   }
@@ -43,59 +47,5 @@
     color: $white;
     // text-shadow: 0px 0px 5px lighten($black, 55);
   }
-
-  // ********************************************************
-  // TODO need dynamic heights
-  // ********************************************************
-  .hero-header-txt {
-    min-height: em(150); // default
-
-    @include breakpoints(nav) { // 480+
-      min-height: em(200);
-    }
-
-    @include breakpoints(tablet) { // 768+
-      min-height: em(275);
-    }
-
-    @include breakpoints(lg_tablet) { // 992+
-      min-height: em(330);
-    }
-
-    @include breakpoints(desktop) { // 1210+
-      min-height: em(375);
-    }
-  }
-
-  &.standard .hero-header-txt {
-    min-height: em(250);
-
-    @include breakpoints(nav) {
-      min-height: em(400);
-    }
-
-    @include breakpoints(lg_tablet) {
-      margin: 5%;
-      min-height: em(500);
-    }
-
-    @include breakpoints(sm_desktop) {
-      margin: 5%;
-      min-height: em(600);
-    }
-
-    @include breakpoints(desktop) {
-      margin: 10%;
-      min-height: em(700);
-    }
-
-    @include breakpoints(really_big) {
-      margin: 100px;
-      min-height: em(800);
-    }
-  }
-  // ********************************************************
-  // TODO need dynamic heights
-  // ********************************************************
 }
 
