@@ -1,18 +1,96 @@
 -
-    img: 'http://placehold.it/400x300'
-    alt: 'image alt'
+    img: /images/wedding/gallery/brewery.jpg
+    alt: "some alt"
+    caption: "some caption"
 -
-    img: 'http://placehold.it/400x300'
-    alt: 'image alt'
+    img: /images/wedding/gallery/brewery2.jpg
+    alt: "some alt"
+    caption: "some caption"
 -
-    img: 'http://placehold.it/400x300'
-    alt: 'image alt'
+    img: /images/wedding/gallery/cancun-shots.jpg
+    alt: "some alt"
+    caption: "some caption"
 -
-    img: 'http://placehold.it/400x300'
-    alt: 'image alt'
+    img: /images/wedding/gallery/concert.jpg
+    alt: "some alt"
+    caption: "some caption"
 -
-    img: 'http://placehold.it/400x300'
-    alt: 'image alt'
+    img: /images/wedding/gallery/kellys-wedding.jpg
+    alt: "some alt"
+    caption: "some caption"
 -
-    img: 'http://placehold.it/400x300'
-    alt: 'image alt'
+    img: /images/wedding/gallery/cancun-bus.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/cancun-beach.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/cancun.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/el-castillo.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/fountain.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/gym.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/kellys-wedding2.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/kite-fest.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/monument.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/mount-vernon.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/nats-game.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/pumpkins.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/rainbow.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/thailand-chiangmai.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/thailand-kayak.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/thailand-phuket.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/tulum.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/valladolid.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/white-house.jpg
+    alt: "some alt"
+    caption: "some caption"
