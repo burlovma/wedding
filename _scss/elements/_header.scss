@@ -108,7 +108,7 @@ header {
       display: block;
       height: $header-height;
       left: 0;
-      opacity: 1;
+      opacity: .95;
 
       @include custom-transition(none);
       @include transform(translateY, 0);
