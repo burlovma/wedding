@@ -125,12 +125,13 @@ var FullWidthParallax = function () {
      * @param {obj} elem - parallax container object
      */
     function FullWidthParallax(elem) {
+        var _this = this;
+
         var topMargin = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
         _classCallCheck(this, FullWidthParallax);
 
-        var context = this,
-            fwi;
+        var fwi = void 0;
 
         this.maxWidth = 480; // want it on mobile too? yes and no
 
@@ -160,13 +161,13 @@ var FullWidthParallax = function () {
             this.topMargin = topMargin;
 
             window.addEventListener('scroll', function () {
-                context.runOnScroll();
+                _this.runOnScroll();
             });
             window.addEventListener('resize', function () {
-                context.runOnResize();
+                _this.runOnResize();
             });
             window.addEventListener('load', function () {
-                context.runOnResize();
+                _this.runOnResize();
             });
 
             this.runOnResize();

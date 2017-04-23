@@ -10,8 +10,7 @@ class FullWidthParallax {
      * @param {obj} elem - parallax container object
      */
     constructor(elem, topMargin = 0) {
-        var context = this,
-            fwi;
+        let fwi;
 
         this.maxWidth = 480; // want it on mobile too? yes and no
 
@@ -40,14 +39,14 @@ class FullWidthParallax {
             this.img = this.img[0];
             this.topMargin = topMargin;
 
-            window.addEventListener('scroll', function() {
-                context.runOnScroll();
+            window.addEventListener('scroll', () => {
+                this.runOnScroll();
             });
-            window.addEventListener('resize', function() {
-                context.runOnResize();
+            window.addEventListener('resize', () => {
+                this.runOnResize();
             });
-            window.addEventListener('load', function() {
-                context.runOnResize();
+            window.addEventListener('load', () => {
+                this.runOnResize();
             });
 
             this.runOnResize();
