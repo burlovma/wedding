@@ -7,7 +7,8 @@ title: RSVP | Melissa &amp; Brett
 <section class="hero-header">
     <div class="parallax-image-container">
         <div class="masthead page-banner parallax-image">
-            <div class="full-width-image" id="stock6">
+            <div class="full-width-image">
+                <img src="/images/wedding/stock6.jpg" alt="alt" />
                 <div class="hero-header-txt">
                     <h1 class="thin">RSVP</h1>
                 </div>
@@ -26,21 +27,21 @@ title: RSVP | Melissa &amp; Brett
                 <div class="field-row">
                     <div class="field-block full">
                         <label for="invitee_email">Email</label>
-                        <input type="text" id="invitee_email" name="invitee_email" value="" />
+                        <input type="email" id="invitee_email" name="invitee_email" value="" required pattern="^([a-zA-Z0-9_\.-]+)@([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})$" />
                     </div>
                 </div>
                 <div class="field-row">
                     <div class="field-block half">
                         <label for="invitee_name">Name</label>
-                        <input type="text" id="invitee_name" name="invitee_name" value="" />
+                        <input type="text" id="invitee_name" name="invitee_name" value="" required />
                     </div>
                     <div class="field-block half">
                         <label for="invitee_food">Entreé</label>
                         <div class="select-div">
                             <select name="invitee_food">
-                                <option value="food1">Chicken</option>
-                                <option value="food2">Steak</option>
-                                <option value="food3">Vegetarian</option>
+                                <option value="Chicken">Chicken</option>
+                                <option value="Steak">Steak</option>
+                                <option value="Vegetarian">Vegetarian</option>
                             </select>
                         </div>
                     </div>
@@ -52,21 +53,21 @@ title: RSVP | Melissa &amp; Brett
                 <div class="field-row expandable">
                     <div class="field-block half">
                         <label for="guest_name">Guest Name</label>
-                        <input type="text" id="guest_name" name="guest_name" value="" />
+                        <input type="text" id="guest_name" name="guest_name" value="" required />
                     </div>
                     <div class="field-block half">
                         <label for="guest_food">Guest Entreé</label>
                         <div class="select-div">
                             <select name="guest_food">
-                                <option value="food1">Chicken</option>
-                                <option value="food2">Steak</option>
-                                <option value="food3">Vegetarian</option>
+                                <option value="Chicken">Chicken</option>
+                                <option value="Steak">Steak</option>
+                                <option value="Vegetarian">Vegetarian</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="field-block">
-                    <label for="message">Message</label>
+                    <label for="message">Message <em> - Optional</em></label>
                     <textarea name="message" id="message"></textarea>
                 </div>
                 <div class="submit-form">

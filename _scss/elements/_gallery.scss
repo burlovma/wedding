@@ -22,10 +22,11 @@
     position: relative;
 
     img {
-      bottom: -2000px;
+      height: 100%;
+      left: 0;
       margin: auto;
       position: absolute;
-      top: -2000px;
+      top: 0;
       width: 100%;
     }
   }

@@ -20,7 +20,7 @@ var Helper = require('Helper');
             e.preventDefault();
 
             Helper.addClass(overlay, 'visible');
-        }, false);
+        });
 
         overlay.addEventListener('click', function (e) {
 
@@ -28,14 +28,14 @@ var Helper = require('Helper');
                 e.preventDefault();
                 Helper.removeClass(overlay, 'visible');
             }
-        }, false);
+        });
     }
 
     btn.addEventListener('click', function (e) {
         e.preventDefault();
 
         Helper.toggleClass(header, 'open');
-    }, false);
+    });
 })();
 
 },{"Helper":"Helper"}],2:[function(require,module,exports){
@@ -128,6 +128,7 @@ var FullWidthParallax = function () {
         var _this = this;
 
         var topMargin = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+        var supports3d = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
         _classCallCheck(this, FullWidthParallax);
 
@@ -137,19 +138,11 @@ var FullWidthParallax = function () {
 
         this.imgCont = elem;
 
+        this.supports3d = supports3d;
+
         fwi = elem.getElementsByClassName('full-width-image');
 
-        /*
-         * support both?
-        if (fwi.length) {
-            this.img = fwi[0].getElementsByTagName('img').length ?
-                fwi[0].getElementsByTagName('img') :
-                fwi;
-        } else {
-            this.img = [];
-        }*/
-
-        this.img = fwi || [];
+        this.img = fwi ? fwi[0].getElementsByTagName('img') : [];
         this.topVal = 0;
         this.longPage = false;
         this.isBanner = Helper.hasClass(elem, 'page-banner');
@@ -174,13 +167,26 @@ var FullWidthParallax = function () {
         }
     }
 
-    /**
-     * Get updated window dimensions and update right column box if switched
-     * between desktop and mobile
-     */
+    // add css prefixes
 
 
     _createClass(FullWidthParallax, [{
+        key: 'setStyle',
+        value: function setStyle(el, prop, val) {
+            var uc = prop.substr(0, 1).toUpperCase() + prop.substr(1);
+            el.style['Webkit' + uc] = val;
+            el.style['Moz' + uc] = val;
+            el.style['ms' + uc] = val;
+            el.style['O' + uc] = val;
+            el.style[prop] = val;
+        }
+
+        /**
+         * Get updated window dimensions and update right column box if switched
+         * between desktop and mobile
+         */
+
+    }, {
         key: 'runOnResize',
         value: function runOnResize() {
             var de = document.documentElement,
@@ -214,7 +220,12 @@ var FullWidthParallax = function () {
 
                 // else if mobile size reset image to top
             } else if (this.topVal !== this.centered && this.contH > 0) {
-                this.img.style.backgroundPosition = '50% ' + this.centered + 'px';
+
+                if (this.supports3d) {
+                    this.setStyle(this.img, 'transform', 'translate3d(0, ' + this.centered + 'px, 0)');
+                } else {
+                    this.img.style.top = this.centered + 'px';
+                }
                 this.topVal = this.centered;
             }
         }
@@ -258,10 +269,19 @@ var FullWidthParallax = function () {
 
                 imgTop = imgTop < this.centered && this.isBanner ? this.centered : imgTop;
 
-                this.img.style.backgroundPosition = '50% ' + imgTop + 'px';
+                if (this.supports3d) {
+                    this.setStyle(this.img, 'transform', 'translate3d(0, ' + imgTop + 'px, 0)');
+                } else {
+                    this.img.style.top = imgTop + 'px';
+                }
                 this.topVal = imgTop;
             } else if (this.topVal !== this.centered) {
-                this.img.style.backgroundPosition = '50% ' + this.centered + 'px';
+
+                if (this.supports3d) {
+                    this.setStyle(this.img, 'transform', 'translate3d(0, ' + this.centered + 'px, 0)');
+                } else {
+                    this.img.style.top = this.centered + 'px';
+                }
                 this.topVal = this.centered;
             }
         }
@@ -272,22 +292,48 @@ var FullWidthParallax = function () {
 
 ;
 
-var ParallaxImage =
+var ParallaxImage = function () {
 
-/*
- * Creates FullWidthParallax object(s)
- * @param {int} topMargin - margin to top of full width image object
- * (optional since FullWidthParallax class defaults it to 0)
- */
-function ParallaxImage(topMargin) {
-    _classCallCheck(this, ParallaxImage);
+    /*
+     * Creates FullWidthParallax object(s)
+     * @param {int} topMargin - margin to top of full width image object
+     * (optional since FullWidthParallax class defaults it to 0)
+     */
+    function ParallaxImage(topMargin) {
+        _classCallCheck(this, ParallaxImage);
 
-    var banners = document.querySelectorAll('.parallax-image');
+        var banners = document.querySelectorAll('.parallax-image'),
+            supports3d = this.caniuse();
 
-    banners.forEach(function (banner) {
-        new FullWidthParallax(banner, topMargin);
-    });
-};
+        banners.forEach(function (banner) {
+            new FullWidthParallax(banner, topMargin, supports3d);
+        });
+    }
+
+    // caniuse xD
+
+
+    _createClass(ParallaxImage, [{
+        key: 'caniuse',
+        value: function caniuse() {
+            var el = document.createElement('div'),
+                supports3d = void 0,
+                val = 'translate3d(0px, 0px, 0px)';
+
+            el.style.WebkitTransform = val;
+            el.style.MozTransform = val;
+            el.style.msTransform = val;
+            el.style.OTransform = val;
+            el.style.transform = val;
+
+            supports3d = el.style.cssText.match(/translate3d\(0px, 0px, 0px\)/g);
+
+            this.supports3d = supports3d && supports3d.length === 1;
+        }
+    }]);
+
+    return ParallaxImage;
+}();
 
 ;
 

@@ -1,1 +1,6 @@
 <script src="/js/wedding.min.js" type="text/javascript" charset="utf-8"></script>
+{% if page.active == 'rsvp' %}
+<script src="/js/rsvp.min.js" type="text/javascript" charset="utf-8"></script>
+{% elsif page.active == 'main' %}
+<script src="/js/lazy.min.js" type="text/javascript" charset="utf-8"></script>
+{% endif %}

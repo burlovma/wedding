@@ -13,7 +13,7 @@ form {
 
     &.invalid { border-color: red; }
 
-    // &:focus { border-color: $input-focus; }
+    &:focus { border-color: $black; }
   }
 
   .validation {

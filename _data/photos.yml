@@ -11,23 +11,15 @@
     alt: "some alt"
     caption: "some caption"
 -
+    img: /images/wedding/gallery/halloween.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
     img: /images/wedding/gallery/hike4.jpg
     alt: "some alt"
     caption: "some caption"
 -
-    img: /images/wedding/gallery/monument.jpg
-    alt: "some alt"
-    caption: "some caption"
--
     img: /images/wedding/gallery/fountain.jpg
-    alt: "some alt"
-    caption: "some caption"
--
-    img: /images/wedding/gallery/white-house.jpg
-    alt: "some alt"
-    caption: "some caption"
--
-    img: /images/wedding/gallery/ferris-wheel.jpg
     alt: "some alt"
     caption: "some caption"
 -
@@ -39,19 +31,11 @@
     alt: "some alt"
     caption: "some caption"
 -
-    img: /images/wedding/gallery/hike3.jpg
-    alt: "some alt"
-    caption: "some caption"
--
-    img: /images/wedding/gallery/hike2.jpg
-    alt: "some alt"
-    caption: "some caption"
--
     img: /images/wedding/gallery/cabin.jpg
     alt: "some alt"
     caption: "some caption"
 -
-    img: /images/wedding/gallery/hike.jpg
+    img: /images/wedding/gallery/appalachian-trail.jpg
     alt: "some alt"
     caption: "some caption"
 -
@@ -63,11 +47,19 @@
     alt: "some alt"
     caption: "some caption"
 -
+    img: /images/wedding/gallery/aaron-wedding.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
     img: /images/wedding/gallery/rainbow.jpg
     alt: "some alt"
     caption: "some caption"
 -
     img: /images/wedding/gallery/nats-game.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/dogfish.jpg
     alt: "some alt"
     caption: "some caption"
 -
@@ -119,7 +111,19 @@
     alt: "some alt"
     caption: "some caption"
 -
-    img: /images/wedding/gallery/thailand-chiangmai.jpg
+    img: /images/wedding/gallery/elephant.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/ayutthaya.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/ankgor-wat.jpg
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/bayon.jpg
     alt: "some alt"
     caption: "some caption"
 -
@@ -127,18 +131,14 @@
     alt: "some alt"
     caption: "some caption"
 -
-    img: /images/wedding/gallery/thailand-kayak2.jpg
-    alt: "some alt"
-    caption: "some caption"
--
-    img: /images/wedding/gallery/thailand-phuket.jpg
-    alt: "some alt"
-    caption: "some caption"
--
-    img: /images/wedding/gallery/thailand-phuket6.jpg
+    img: /images/wedding/gallery/scuba-diving.jpg
     alt: "some alt"
     caption: "some caption"
 -
     img: /images/wedding/gallery/thailand-proposal.png
+    alt: "some alt"
+    caption: "some caption"
+-
+    img: /images/wedding/gallery/thailand-phuket6.jpg
     alt: "some alt"
     caption: "some caption"

@@ -3,7 +3,7 @@
 <footer>
     <ul>
         {% for item in site.data.social %}
-        <li><a href="{{ item.url }}" target="_blank" title="{{ item.message }}">{{ item.message }}!<i class="fa fa-{{ item.icon }}" aria-hidden="true"></i></a></li>
+        <li><a href="{{ item.url }}" target="_blank" title="{{ item.message }}">{{ item.message }}<i class="fa fa-{{ item.icon }}" aria-hidden="true"></i></a></li>
         {% endfor %}
         <!--<li><a href="#" id="share">Share this!<i class="fa fa-share-alt" aria-hidden="true"></i></a></li>-->
     </ul>

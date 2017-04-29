@@ -9,26 +9,18 @@ class FullWidthParallax {
      * Creates FullWidthParallax object
      * @param {obj} elem - parallax container object
      */
-    constructor(elem, topMargin = 0) {
+    constructor(elem, topMargin = 0, supports3d = true) {
         let fwi;
 
         this.maxWidth = 480; // want it on mobile too? yes and no
 
         this.imgCont = elem;
 
+        this.supports3d = supports3d;
+
         fwi = elem.getElementsByClassName('full-width-image');
 
-        /*
-         * support both?
-        if (fwi.length) {
-            this.img = fwi[0].getElementsByTagName('img').length ?
-                fwi[0].getElementsByTagName('img') :
-                fwi;
-        } else {
-            this.img = [];
-        }*/
-
-        this.img = fwi || [];
+        this.img = fwi ? fwi[0].getElementsByTagName('img') : [];
         this.topVal = 0;
         this.longPage = false;
         this.isBanner = Helper.hasClass(elem, 'page-banner');
@@ -51,6 +43,16 @@ class FullWidthParallax {
 
             this.runOnResize();
         }
+    }
+
+    // add css prefixes
+    setStyle(el, prop, val) {
+        var uc = prop.substr(0, 1).toUpperCase() + prop.substr(1);
+        el.style['Webkit' + uc] = val;
+        el.style['Moz' + uc] = val;
+        el.style['ms' + uc] = val;
+        el.style['O' + uc] = val;
+        el.style[prop] = val;
     }
 
     /**
@@ -90,7 +92,16 @@ class FullWidthParallax {
 
         // else if mobile size reset image to top
         } else if (this.topVal !== this.centered && this.contH > 0) {
-            this.img.style.backgroundPosition = `50% ${this.centered}px`;
+
+            if (this.supports3d) {
+                this.setStyle(
+                    this.img,
+                    'transform',
+                    `translate3d(0, ${this.centered}px, 0)`
+                );
+            } else {
+                this.img.style.top = `${this.centered}px`;
+            }
             this.topVal = this.centered;
         }
     }
@@ -134,10 +145,27 @@ class FullWidthParallax {
                 this.centered :
                 imgTop;
 
-            this.img.style.backgroundPosition = `50% ${imgTop}px`;
+            if (this.supports3d) {
+                this.setStyle(
+                    this.img,
+                    'transform',
+                    `translate3d(0, ${imgTop}px, 0)`
+                );
+            } else {
+                this.img.style.top = `${imgTop}px`;
+            }
             this.topVal = imgTop;
         } else if (this.topVal !== this.centered) {
-            this.img.style.backgroundPosition = `50% ${this.centered}px`;
+
+            if (this.supports3d) {
+                this.setStyle(
+                    this.img,
+                    'transform',
+                    `translate3d(0, ${this.centered}px, 0)`
+                );
+            } else {
+                this.img.style.top = `${this.centered}px`;
+            }
             this.topVal = this.centered;
         }
     }
@@ -152,11 +180,29 @@ class ParallaxImage {
      * (optional since FullWidthParallax class defaults it to 0)
      */
     constructor(topMargin) {
-        let banners = document.querySelectorAll('.parallax-image');
+        let banners = document.querySelectorAll('.parallax-image'),
+            supports3d = this.caniuse();
 
         banners.forEach(banner => {
-            new FullWidthParallax(banner, topMargin);
+            new FullWidthParallax(banner, topMargin, supports3d);
         });
+    }
+
+    // caniuse xD
+    caniuse() {
+        let el = document.createElement('div'),
+            supports3d,
+            val = 'translate3d(0px, 0px, 0px)';
+
+        el.style.WebkitTransform = val;
+        el.style.MozTransform = val;
+        el.style.msTransform = val;
+        el.style.OTransform = val;
+        el.style.transform = val;
+
+        supports3d = el.style.cssText.match(/translate3d\(0px, 0px, 0px\)/g);
+
+        this.supports3d = (supports3d && supports3d.length === 1);
     }
 
 };

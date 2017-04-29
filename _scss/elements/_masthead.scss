@@ -12,25 +12,43 @@ section .parallax-image-container .hero-header-txt { max-height: em(600); }
   position: relative;
 
   .full-width-image {
-    background-position: 50% 0%;
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 100%;
-    margin: 0 auto;
     overflow: hidden;
     position: absolute;
     top: 0;
     width: 100%;
 
-    $backgrounds: 'shenandoah', 'cancun-car', 'thailand-phuket2', 'thailand-phuket4', 'thailand-phuket5',
-                  'thailand-phuket7', 'stock1', 'stock4', 'stock5', 'stock6', 'barn';
-
-    @each $background in $backgrounds {
-      $img: map-get($images, $background);
-
-      &##{$background} { background-image: url($img); }
+    img {
+      left: -1000px;
+      margin: 0 auto;
+      min-height: 100%;
+      position: absolute;
+      right: -1000px;
+      top: 0;
+      width: 100%;
     }
   }
+
+  // .full-width-image {
+  //   background-position: 50% 0%;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   height: 100%;
+  //   margin: 0 auto;
+  //   overflow: hidden;
+  //   position: absolute;
+  //   top: 0;
+  //   width: 100%;
+
+  //   $backgrounds: 'shenandoah', 'cancun-car', 'thailand-phuket2', 'thailand-phuket4', 'thailand-phuket5',
+  //                 'thailand-phuket7', 'stock1', 'stock4', 'stock5', 'stock6', 'barn';
+
+  //   @each $background in $backgrounds {
+  //     $img: map-get($images, $background);
+
+  //     &##{$background} { background-image: url($img); }
+  //   }
+  // }
 }
 
 .masthead {

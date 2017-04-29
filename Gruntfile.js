@@ -37,6 +37,17 @@ module.exports = function(grunt) {
                         './_js/globals/modules/Helper.js:Helper'
                     ]
                 }
+            },
+            lazy: {
+                files: {
+                    '_js/bundled/lazy.js': '_js/lazy.js'
+                },
+                options: {
+                    transform: ['babelify'],
+                    alias: [
+                        './_js/globals/modules/Helper.js:Helper'
+                    ]
+                }
             }
         },
         watch: {
@@ -57,12 +68,40 @@ module.exports = function(grunt) {
             },
             build: {
                 files: [{
-                    src: [
-                        '_js/bundled/main.js',
-                        '_js/bundled/rsvp.js'
-                    ],
+                    src: '_js/bundled/main.js',
                     dest: 'js/<%= pkg.name %>.min.js'
+                },
+                {
+                    src: '_js/bundled/rsvp.js',
+                    dest: 'js/rsvp.min.js'
+                },
+                {
+                    src: '_js/bundled/lazy.js',
+                    dest: 'js/lazy.min.js'
                 }]
+            }
+        },
+        critical: {
+            test: {
+                options: {
+                    base: './',
+                    css: [
+                        '_site/css/style.css'
+                    ],
+                    dimensions: [{
+                        width: 320,
+                        height: 70
+                    }, {
+                        width: 768,
+                        height: 500
+                    }, {
+                        width: 1200,
+                        height: 900
+                    }],
+                    minify: false
+                },
+                src: '_site/index.html',
+                dest: 'generated/critical.css'
             }
         }
     });
@@ -74,6 +113,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    grunt.loadNpmTasks('grunt-critical');
 
     grunt.registerTask('production', ['sass', 'browserify', 'uglify']);
 

@@ -15,17 +15,16 @@ var Helper = require('Helper');
 
         open.addEventListener(
             'click',
-            function(e) {
+            (e) => {
                 e.preventDefault();
 
                 Helper.addClass(overlay, 'visible');
-            },
-            false
+            }
         );
 
         overlay.addEventListener(
             'click',
-            function(e) {
+            (e) => {
 
                 if (Helper.hasClass(e.target, 'overlay') ||
                     Helper.hasClass(e.target, 'o-container') ||
@@ -34,19 +33,17 @@ var Helper = require('Helper');
                     e.preventDefault();
                     Helper.removeClass(overlay, 'visible');
                 }
-            },
-            false
+            }
         );
     }
 
     btn.addEventListener(
         'click',
-        function(e) {
+        (e) => {
             e.preventDefault();
 
             Helper.toggleClass(header, 'open');
-        },
-        false
+        }
     );
 
 })();
