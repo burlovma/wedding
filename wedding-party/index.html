@@ -1,0 +1,59 @@
+---
+layout: default
+active: wedding-party
+title: Wedding Party | Melissa &amp; Brett
+---
+
+<section class="hero-header">
+    <div class="parallax-image-container">
+        <div class="masthead page-banner parallax-image">
+            <div class="full-width-image">
+                <img src="/images/wedding/stock7.jpg" alt="alt" />
+                <div class="hero-header-txt">
+                    <h1 class="thin">Wedding Party</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-break">
+    <div class="container">
+        <div class="inner-container normal">
+            <h4>Let us introduce</h4>
+
+            {% for item in site.data.people %}
+            {% assign mod = forloop.index | modulo: 2 %}
+            <div class="party-person hide">
+                {% if mod == 0 %}
+                <div class="person-info unseen">
+                    <h4>{{ item.name }}</h4>
+                    <p class="slightly-larger"><em>{{ item.role }}</em></p>
+                    <p>{{ item.info }}</p>
+                </div>
+                <div class="img-container unseen">
+                    <div class="img">
+                        <img src="{{ item.img }}" alt="{{ item.alt }}" />
+                    </div>
+                </div>
+                {% else %}
+                <div class="img-container unseen">
+                    <div class="img">
+                        <img src="{{ item.img }}" alt="{{ item.alt }}" />
+                    </div>
+                </div>
+                <div class="person-info unseen">
+                    <h4>{{ item.name }}</h4>
+                    <p class="slightly-larger"><em>{{ item.role }}</em></p>
+                    <p>{{ item.info }}</p>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+

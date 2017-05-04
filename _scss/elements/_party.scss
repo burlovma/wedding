@@ -1,0 +1,95 @@
+
+
+
+.normal > h4 { margin-bottom: em(50); }
+
+.party-person {
+  font-size: .875em;
+  margin-bottom: 1.25em;
+  overflow: hidden;
+
+  &:last-child { margin-bottom: 0; }
+
+  > div:first-child { margin-bottom: em(20); }
+
+  .img-container,
+  .person-info { @include span(12); }
+
+  .img-container {
+    float: none;
+    margin: 0 auto;
+    max-width: em(400);
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+@include breakpoints(tablet) {
+  .party-person {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: em(50);
+
+    > div:first-child { margin-bottom: em(20); }
+
+    .person-info:first-child,
+    .person-info:first-child h4 { text-align: right; }
+    .person-info:last-child,
+    .person-info:last-child h4 { text-align: left; }
+
+    .img-container {
+      margin-bottom: 0;
+      padding: 0;
+      max-width: 400px;
+    }
+
+    .img-container,
+    .person-info { padding: 0; }
+
+    .img {
+      display: block;
+      height: 0;
+      overflow: hidden;
+      padding: 0 0 75%;
+      position: relative;
+
+      img {
+        height: 100%;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    > div {
+      position: relative;
+      @include custom-transition(all $super-slow-animation-timing ease);
+
+      &:first-child { left: -20%; }
+
+      &:last-child {
+        padding-left: 20px;
+        right: -20%;
+      }
+    }
+
+    .unseen {
+      @include opacity(0);
+    }
+
+    .seen {
+
+      &:first-child { left: 0; }
+
+      &:last-child { right: 0; }
+
+      @include opacity(1);
+    }
+  }
+}
+

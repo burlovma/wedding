@@ -163,11 +163,13 @@ var Helper = require('Helper'),
         form.elements.plus_one.addEventListener('click', function () {
             var el = void 0,
                 guest = form.elements.guest_name,
+                guestFood = form.elements.guest_food,
                 msg = form.elements.message;
 
             Helper.toggleClass(toggleRow, 'hide');
 
             guest.required = guest.required ? false : true;
+            guestFood.required = guestFood.required ? false : true;
 
             if (Helper.hasClass(guest, 'invalid')) Helper.removeClass(guest, 'invalid');
 

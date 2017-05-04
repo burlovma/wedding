@@ -48,6 +48,17 @@ module.exports = function(grunt) {
                         './_js/globals/modules/Helper.js:Helper'
                     ]
                 }
+            },
+            party: {
+                files: {
+                    '_js/bundled/party.js': '_js/party.js'
+                },
+                options: {
+                    transform: ['babelify'],
+                    alias: [
+                        './_js/globals/modules/Helper.js:Helper'
+                    ]
+                }
             }
         },
         watch: {
@@ -68,7 +79,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: [{
-                    src: '_js/bundled/main.js',
+                    src: ['_js/bundled/main.js', '_js/bundled/party.js'],
                     dest: 'js/<%= pkg.name %>.min.js'
                 },
                 {

@@ -7,6 +7,7 @@
 @import 'elements/masthead';
 @import 'elements/gallery';
 @import 'elements/forms';
+@import 'elements/party';
 // @import 'elements/overlay';
 @import 'elements/footer';
 
@@ -16,13 +17,15 @@
   border-style: solid;
   text-align: center;
 
+  &:nth-child(2n) { border-top-width: 0; }
+
   &.rsvp-form {
     text-align: left;
 
     h4 { margin-bottom: em(6, 24); }
   }
 
-  .inner-container {
+  .inner-container:not(.normal) {
     @include breakpoints(nav) {
       @include span(10);
       @include offset(1);

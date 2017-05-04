@@ -5,6 +5,36 @@
 section .parallax-image-container,
 section .parallax-image-container .hero-header-txt { max-height: em(600); }
 
+// this is a big old maybe - hold off for now
+// .full-width-image {
+
+//   &:before,
+//   &:after {
+//     content: '';
+//     height: 1%;
+//     left: 0;
+//     position: absolute;
+//     width: 100%;
+//   }
+
+//   &:before {
+//     background-image: -moz-linear-gradient(top, transparentize($black, .75) 1%, transparent 100%);
+//     background-image: -webkit-linear-gradient(top, transparentize($black, .75) 1%, transparent 100%);
+//     background-image: linear-gradient(to bottom, transparentize($black, .75) 1%, transparent 100%);
+//     padding-bottom: 1em;
+//     top: 0;
+//   }
+
+//   &:after {
+//     background-image: -moz-linear-gradient(bottom, transparentize($black, .75) 1%, transparent 100%);
+//     background-image: -webkit-linear-gradient(bottom, transparentize($black, .75) 1%, transparent 100%);
+//     background-image: linear-gradient(to top, transparentize($black, .75) 1%, transparent 100%);
+//     bottom: 0;
+//     padding-top: 1em;
+//   }
+
+// }
+
 .parallax-image {
   height: 0;
   overflow: hidden;
