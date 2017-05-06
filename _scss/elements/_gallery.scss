@@ -6,19 +6,13 @@
   border-width: 1px 0;
   border-style: solid;
 
-  .block {
-    @include span(12);
-    margin-bottom: em(25);
-
-    &:last-child { margin-bottom: 0; }
-  }
+  .download { display: none; }
 
   .img {
     display: block;
     height: 0;
     overflow: hidden;
-    // padding: 0 0 75%; // used to be 4:3
-    padding: 0 0 100%;
+    padding-bottom: 100%;
     position: relative;
 
     img {
@@ -32,7 +26,7 @@
   }
 
   .caption-container {
-    padding: 10px 0;
+    display: none;
 
     .caption {
       color: lighten($gray, 10);
@@ -41,27 +35,82 @@
     }
   }
 
-  @include breakpoints(nav) {
-    .block { @include span(6); }
+  // love it or hate it!?!
+  @media (max-width: em(479)) {
+    .block {
+      float: left;
+      padding: em(.5);
+      width: 50%;
+
+      $childs: 3 8 13 16 23 28 33 36;
+
+      @each $child in $childs {
+        &:nth-child(#{$child}) { width: 100%; }
+      }
+    }
   }
+
+  @media (min-width: em(480)) and (max-width: em(767)) {
+    .block {
+      float: left;
+      padding: em(.5);
+      width: 50%;
+
+      $childs: 1 2 3 4 8 9 10 11 16 17 18 19 20 21 22 23 26 27 28 29 33 34 35 36;
+
+      @each $child in $childs {
+        &:nth-child(#{$child}) { width: 25%; }
+      }
+    }
+  }
+
+  @media (max-width: em(767)) {
+    .container {
+      max-width: none;
+      padding: 0;
+    }
+  }
+
+  // @include breakpoints(nav) {
+  //   .block {
+  //     @include span(6);
+  //     margin-bottom: em(25);
+
+  //     &:last-child { margin-bottom: 0; }
+  //   }
+
+  //   .caption-container {
+  //     display: block;
+  //     padding: 10px 0;
+
+  //     .caption {
+  //       color: lighten($gray, 10);
+  //       display: inherit;
+  //       font: 400 .813em/1.5 $condensed-font-family;
+  //     }
+  //   }
+  // }
 
   @include breakpoints(tablet) {
     .block {
       @include span(4);
 
+      margin-bottom: em(25);
       overflow: hidden;
       position: relative;
 
+      &:last-child { margin-bottom: 0; }
+
       .caption-container {
+        display: block;
         height: 100%;
         left: 15px;
-        opacity: 1;
         padding: 10px;
         position: absolute;
         right: 15px;
         top: 100%;
 
-        @include custom-transition(top $animation-timing ease, opacity $animation-timing ease);
+        @include custom-transition(top $animation-timing ease);
 
         .caption-gradient {
           background: transparentize($black, .2);
@@ -79,9 +128,28 @@
         }
       }
 
-      &:hover .caption-container {
-        opacity: 1;
-        top: 0;
+      .download {
+        background: transparentize($black, .75);
+        color: $white;
+        display: block;
+        position: absolute;
+        right: 15px;
+        text-align: center;
+        top: em(-26);
+        width: em(30);
+        z-index: 1;
+
+        @include opacity(0);
+        @include custom-transition(opacity $animation-timing ease, top $animation-timing ease);
+      }
+
+      &:hover {
+        .download {
+          @include opacity(1);
+          top: 0;
+        }
+
+        .caption-container { top: 0; }
       }
     }
   }

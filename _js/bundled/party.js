@@ -53,7 +53,7 @@ var Helper = require('Helper');
         });
     }
 
-    onScroll();
+    if (people && w.innerWidth >= 768) onScroll();
 })();
 
 },{"Helper":"Helper"}],"Helper":[function(require,module,exports){

@@ -12,8 +12,7 @@ title: Melissa &amp; Brett
     <div class="container">
         <div class="inner-container">
             <h4>Our Story</h4>
-            <p class="slightly-larger">We met at work...</p>
-            <p>Our mutual friends Kylla and Miki set us up originally, thinking we'd be perfect for each other. After our first date, we both decided we weren't interested! But several months later we happened to go on the same group camping trip, and saw each other in a new light. We fell in love. And we can't wait to spend the rest of our lives together.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto nam repudiandae numquam necessitatibus nemo consequatur, ex asperiores quisquam eius, eligendi dolor quia eaque vel incidunt explicabo voluptatibus quis. Magni, quidem!</p>
         </div>
     </div>
 </section>
@@ -34,6 +33,9 @@ title: Melissa &amp; Brett
         <div class="inner-container">
             {% for item in site.data.photos %}
             <div class="block">
+                <a href="{{ item.img }}" class="download" download>
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                </a>
                 <span class="img">
                     <img data-lazy-load-src="{{ item.img }}" alt="{{ item.alt }}" />
                 </span>

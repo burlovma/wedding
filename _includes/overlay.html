@@ -1,18 +1,8 @@
 <div class="overlay">
-    <div class="o-container">
-        <div class="o-inner-container">
-            <a href="#" class="close-overlay">Close<i class="fa fa-times" aria-hidden="true"></i></a>
-            <ul>
-                <li>Share</li>
-                <!--{% for item in site.data.share %}
-                {% if item.network == 'email' %}
-                {% assign icon = 'envelope' %}
-                {% else %}
-                {% assign icon = item.network %}
-                {% endif %}
-                <li><a href="{{ item.url }}" target="_blank">Share via {{ item.network | capitalize }}!<i class="fa fa-{{ icon }}" aria-hidden="true"></i></a></li>
-                {% endfor %}-->
-            </ul>
+    <div class="overlay-inner">
+        <div class="yt-container">
+            <a href="#" class="close-overlay">Close<i class="fa fa-window-close-o" aria-hidden="true"></i></a>
+            <div id="player"></div>
         </div>
     </div>
 </div>

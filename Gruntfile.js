@@ -49,6 +49,17 @@ module.exports = function(grunt) {
                     ]
                 }
             },
+            overlay: {
+                files: {
+                    '_js/bundled/overlay.js': '_js/overlay.js'
+                },
+                options: {
+                    transform: ['babelify'],
+                    alias: [
+                        './_js/globals/modules/Helper.js:Helper'
+                    ]
+                }
+            },
             party: {
                 files: {
                     '_js/bundled/party.js': '_js/party.js'
@@ -79,7 +90,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: [{
-                    src: ['_js/bundled/main.js', '_js/bundled/party.js'],
+                    src: ['_js/bundled/main.js', '_js/bundled/party.js', '_js/bundled/overlay.js'],
                     dest: 'js/<%= pkg.name %>.min.js'
                 },
                 {
