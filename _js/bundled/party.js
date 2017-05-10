@@ -12,10 +12,16 @@ var Helper = require('Helper');
         unseen = document.querySelectorAll('.unseen'),
         w = window;
 
-    if (people && w.innerWidth >= 768) w.addEventListener('scroll', onScroll);
+    if (people && w.innerWidth >= 768) {
+        onScroll();
+        w.addEventListener('scroll', onScroll);
+    }
 
     w.addEventListener('resize', function () {
-        if (people && w.innerWidth >= 768) w.addEventListener('scroll', onScroll);
+        if (people && w.innerWidth >= 768) {
+            onScroll();
+            w.addEventListener('scroll', onScroll);
+        }
     });
 
     function onScroll() {
@@ -52,8 +58,6 @@ var Helper = require('Helper');
             Helper.addClass(item, 'seen');
         });
     }
-
-    if (people && w.innerWidth >= 768) onScroll();
 })();
 
 },{"Helper":"Helper"}],"Helper":[function(require,module,exports){

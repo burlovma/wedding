@@ -1,11 +1,10 @@
 
 
 
-.normal > h4 { margin-bottom: em(50); }
 
 .party-person {
   font-size: .875em;
-  margin-bottom: 1.25em;
+  margin-bottom: em(40);
   overflow: hidden;
 
   &:last-child { margin-bottom: 0; }
@@ -25,6 +24,9 @@
       width: 100%;
     }
   }
+
+  .person-info h4,
+  .slightly-larger { margin-bottom: 1em; }
 }
 
 @include breakpoints(tablet) {
@@ -33,27 +35,25 @@
     flex-direction: row;
     margin-bottom: em(50);
 
-    > div:first-child { margin-bottom: em(20); }
+    > div:first-child { margin-bottom: 0; }
 
-    .person-info:first-child,
-    .person-info:first-child h4 { text-align: right; }
-    .person-info:last-child,
-    .person-info:last-child h4 { text-align: left; }
+    > div:first-child,
+    > div:first-child h4 { text-align: right; }
+    > div:last-child,
+    > div:last-child h4 { text-align: left; }
 
-    .img-container {
-      margin-bottom: 0;
-      padding: 0;
-      max-width: 400px;
-    }
+    .img-container { max-width: 400px; }
 
     .img-container,
-    .person-info { padding: 0; }
+    .person-info {
+      padding: 0;
+      width: 50%;
+    }
 
     .img {
-      display: block;
       height: 0;
       overflow: hidden;
-      padding: 0 0 75%;
+      padding-bottom: 75%;
       position: relative;
 
       img {
@@ -78,6 +78,17 @@
       }
     }
 
+    &:nth-child(even) {
+      > div:first-child {
+        left: 70%;
+      }
+      > div:last-child {
+        padding-left: 0;
+        padding-right: 20px;
+        right: 70%;
+      }
+    }
+
     .unseen {
       @include opacity(0);
     }
@@ -89,6 +100,15 @@
       &:last-child { right: 0; }
 
       @include opacity(1);
+    }
+
+    &:nth-child(even) {
+      .seen:first-child {
+        left: 49.5%;
+      }
+      .seen:last-child {
+        right: 49.5%;
+      }
     }
   }
 }

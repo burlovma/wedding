@@ -23,6 +23,8 @@ footer {
       padding: 0 10px;
     }
 
+    &:hover a i { @include opacity(.675); }
+
     a {
       display: block;
       overflow: hidden;
@@ -33,12 +35,12 @@ footer {
         color: $dark-gray-color;
         font-size: 1.5rem;
 
-        @include custom-transition(color $animation-timing ease);
+        @include custom-transition(opacity $animation-timing ease);
       }
 
       &:hover,
       &:focus {
-        i { color: $black; }
+        i { @include opacity(1); }
       }
     }
   }

@@ -37,6 +37,13 @@
     }
   }
 
+  .inner-container.special {
+    @include breakpoints(lg_tablet) {
+      @include span(10);
+      @include offset(1);
+    }
+  }
+
   h4 { text-align: center; }
 
   a { @include custom-btn(); }

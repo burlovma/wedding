@@ -6,6 +6,17 @@
   border-width: 1px 0;
   border-style: solid;
 
+  .container {
+    max-width: $container;
+    padding: 0;
+  }
+
+  .block {
+    float: left;
+    padding: em(.5);
+    width: 50%;
+  }
+
   .download { display: none; }
 
   .img {
@@ -35,79 +46,67 @@
     }
   }
 
-  // love it or hate it!?!
   @media (max-width: em(479)) {
-    .block {
-      float: left;
-      padding: em(.5);
-      width: 50%;
-
-      $childs: 3 8 13 16 23 28 33 36;
-
-      @each $child in $childs {
-        &:nth-child(#{$child}) { width: 100%; }
-      }
-    }
+    .block:nth-child(5n+1) { width: 100%; }
   }
+
+  // what we did originally
+  // @media (min-width: em(480)) and (max-width: em(767)) {
+  //   .block:nth-child(-n+4), // 1 - 4
+  //   .block:nth-child(n+8):nth-child(-n+11), // 8 - 11
+  //   .block:nth-child(n+16):nth-child(-n+23), // 16 - 23
+  //   .block:nth-child(n+26):nth-child(-n+29), // 26 - 29
+  //   .block:nth-child(n+33):nth-child(-n+36) // 33 - 36
+  //   { width: 25%; }
+  // }
 
   @media (min-width: em(480)) and (max-width: em(767)) {
     .block {
-      float: left;
-      padding: em(.5);
-      width: 50%;
+      width: 33.33334%;
 
-      $childs: 1 2 3 4 8 9 10 11 16 17 18 19 20 21 22 23 26 27 28 29 33 34 35 36;
+      &:nth-child(6n+1) { width: 66.66667%; }
+
+      $childs: 7 19 31;
 
       @each $child in $childs {
-        &:nth-child(#{$child}) { width: 25%; }
+        &:nth-child(#{$child}) { float: right; }
+      }
+
+      $clears: 4 10 16 22 28 34;
+
+      @each $clear in $clears {
+        &:nth-child(#{$clear}) { clear: both; }
       }
     }
   }
 
-  @media (max-width: em(767)) {
-    .container {
-      max-width: none;
-      padding: 0;
-    }
-  }
-
-  // @include breakpoints(nav) {
-  //   .block {
-  //     @include span(6);
-  //     margin-bottom: em(25);
-
-  //     &:last-child { margin-bottom: 0; }
-  //   }
-
-  //   .caption-container {
-  //     display: block;
-  //     padding: 10px 0;
-
-  //     .caption {
-  //       color: lighten($gray, 10);
-  //       display: inherit;
-  //       font: 400 .813em/1.5 $condensed-font-family;
-  //     }
-  //   }
-  // }
-
   @include breakpoints(tablet) {
     .block {
-      @include span(4);
-
-      margin-bottom: em(25);
       overflow: hidden;
       position: relative;
+      width: 25%;
 
-      &:last-child { margin-bottom: 0; }
+      &:nth-child(9n+1) { width: 50%; }
+
+      $childs: 10 28;
+
+      @each $child in $childs {
+        &:nth-child(#{$child}) { float: right; }
+      }
+
+      $clears: 6 15 24 33;
+
+      @each $clear in $clears {
+        &:nth-child(#{$clear}) { clear: both; }
+      }
 
       .caption-container {
         display: block;
         height: 100%;
-        left: 15px;
+        left: em(.5);
         padding: 10px;
         position: absolute;
-        right: 15px;
+        right: em(.5);
         top: 100%;
 
         @include custom-transition(top $animation-timing ease);
@@ -133,7 +132,7 @@
         color: $white;
         display: block;
         position: absolute;
-        right: 15px;
+        right: em(.5);
         text-align: center;
         top: em(-26);
         width: em(30);
@@ -152,9 +151,5 @@
         .caption-container { top: 0; }
       }
     }
-  }
-
-  @include breakpoints(lg_tablet) {
-    .block { @include span(3); }
   }
 }
