@@ -75,7 +75,7 @@
       $clears: 4 10 16 22 28 34;
 
       @each $clear in $clears {
-        &:nth-child(#{$clear}) { clear: both; }
+        &:nth-child(#{$clear}) { clear: left; }
       }
     }
   }
@@ -97,7 +97,7 @@
       $clears: 6 15 24 33;
 
       @each $clear in $clears {
-        &:nth-child(#{$clear}) { clear: both; }
+        &:nth-child(#{$clear}) { clear: left; }
       }
 
       .caption-container {
