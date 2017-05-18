@@ -6,3 +6,6 @@ $base-px: 16;
   @return #{$px/$context}em;
 }
 
+@function rem($px) {
+  @return #{$px/$base-px}rem;
+}

@@ -64,9 +64,9 @@ header {
   nav {
     align-items: center;
     background: $white;
-    display: flex;
+    @include flex;
     height: 100%;
-    opacity: 0;
+    @include opacity(0);
     position: fixed;
     width: 100%;
     z-index: 10;
@@ -76,27 +76,31 @@ header {
   }
 
   &.open nav {
-    opacity: 1;
+    @include opacity(.95);
     @include transform(translateY, 0);
   }
 
   ul {
     text-align: center;
     width: 100%;
+  }
 
-    li {
-      margin: em(15);
+  li a {
+    display: block;
+    font-weight: 400;
+    padding: em(8);
+    text-transform: uppercase;
 
-      a {
-        display: block;
-        font-weight: 400;
-        text-transform: uppercase;
+    &:hover,
+    &:focus { text-decoration: none; }
 
-        &:hover,
-        &:focus { text-decoration: none; }
-      }
+    &.active:before {
+      content: $fa-var-hand-o-right;
+      @include fa-icon;
+      margin-right: em(10);
     }
   }
+
 
   @include breakpoints(tablet) {
     height: $header-height;
@@ -108,7 +112,7 @@ header {
       display: block;
       height: $header-height;
       left: 0;
-      opacity: .95;
+      @include opacity(.95);
 
       @include custom-transition(none);
       @include transform(translateY, 0);
@@ -119,7 +123,6 @@ header {
       li {
         display: inline-block;
         margin: 0;
-        // box-shadow: 10px 5px 5px black;
 
         a {
           line-height: em(66);
@@ -130,10 +133,11 @@ header {
             content: '';
             display: block;
             height: 3px;
-            // margin-top: 10px; // any margin?
             @include scale(0);
             @include custom-transition(transform .25s ease);
           }
+
+          &.active:before { content: none; }
 
           &:hover,
           &:focus {

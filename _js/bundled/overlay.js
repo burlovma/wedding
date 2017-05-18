@@ -29,7 +29,7 @@ var Helper = require('Helper');
             heartClicks++;
             heartBeat();
 
-            if (heartClicks === 10) openOverlay();
+            if (heartClicks === 3) openOverlay();
         });
 
         overlay.addEventListener('click', function (e) {
@@ -89,7 +89,9 @@ var Helper = require('Helper');
         player = new YT.Player('player', {
             height: Math.round(bounds.height),
             width: Math.round(bounds.width),
-            videoId: '3H6amDbAwlY', // tequila!
+            videoId: 'JPOSGVUYgVQ', // get on your feet!
+            // videoId: 'zw1o3gS2oNA', // Gloria Estefan - Conga
+            // videoId: '3H6amDbAwlY', // tequila!
             // videoId: 'dQw4w9WgXcQ', // never gonna give you up
             // videoId: 'JnsV87X26DI', // sexual harrassment panda
             events: {

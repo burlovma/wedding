@@ -138,6 +138,6 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-critical');
 
-    grunt.registerTask('production', ['sass', 'browserify', 'uglify']);
+    grunt.registerTask('production', ['browserify', 'uglify']);
 
 };

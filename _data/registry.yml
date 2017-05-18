@@ -1,18 +1,30 @@
 -
-    img: 'http://placehold.it/400x300'
+    img: /images/wedding/registry/macys.png
     alt: 'image alt'
+    link: https://www.macys.com/
+    title: "Macy's"
 -
-    img: 'http://placehold.it/400x300'
+    img: /images/wedding/registry/bb&b.png
     alt: 'image alt'
+    link: https://www.bedbathandbeyond.com/
+    title: "Bed Bath &amp; Beyond"
 -
-    img: 'http://placehold.it/400x300'
+    img: /images/wedding/registry/crate.png
     alt: 'image alt'
+    link: https://www.crateandbarrel.com/
+    title: "Crate &amp; Barrel"
 -
-    img: 'http://placehold.it/400x300'
+    img: /images/wedding/registry/williams-sonoma.png
     alt: 'image alt'
+    link: http://www.williams-sonoma.com/
+    title: "Williams Sonoma"
 -
-    img: 'http://placehold.it/400x300'
+    img: /images/wedding/registry/wayfair.png
     alt: 'image alt'
+    link: https://www.wayfair.com/
+    title: "Wayfair"
 -
-    img: 'http://placehold.it/400x300'
+    img: /images/wedding/registry/amazon.png
     alt: 'image alt'
+    link: https://www.amazon.com/
+    title: "Amazon"

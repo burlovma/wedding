@@ -9,17 +9,8 @@ var Helper = require('Helper');
         unseen = document.querySelectorAll('.unseen'),
         w = window;
 
-    if (people && w.innerWidth >= 768) {
-        onScroll();
-        w.addEventListener('scroll', onScroll);
-    }
-
-    w.addEventListener('resize', () => {
-        if (people && w.innerWidth >= 768) {
-            onScroll();
-            w.addEventListener('scroll', onScroll);
-        }
-    });
+    onScroll();
+    w.addEventListener('scroll', onScroll);
 
     function onScroll() {
         people.forEach(item => {

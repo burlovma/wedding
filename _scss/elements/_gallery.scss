@@ -22,7 +22,6 @@
   .img {
     display: block;
     height: 0;
-    overflow: hidden;
     padding-bottom: 100%;
     position: relative;
 
@@ -33,6 +32,13 @@
       position: absolute;
       top: 0;
       width: 100%;
+
+      @include opacity(0);
+      @include custom-transition(opacity $animation-timing ease, transform $animation-timing ease);
+
+      &.lazy-loaded {
+        @include opacity(1);
+      }
     }
   }
 
@@ -46,9 +52,9 @@
     }
   }
 
-  @media (max-width: em(479)) {
-    .block:nth-child(5n+1) { width: 100%; }
-  }
+  // @media (max-width: em(479)) {
+  //   .block:nth-child(5n+1) { width: 100%; }
+  // }
 
   // what we did originally
   // @media (min-width: em(480)) and (max-width: em(767)) {

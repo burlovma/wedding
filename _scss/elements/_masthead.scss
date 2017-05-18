@@ -85,7 +85,7 @@ section .parallax-image-container .hero-header-txt { max-height: em(600); }
 
   .hero-header-txt {
     align-items: center;
-    display: flex;
+    @include flex;
     height: 100%;
     justify-content: center;
     position: relative;

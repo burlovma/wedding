@@ -31,7 +31,7 @@
 
 @include breakpoints(tablet) {
   .party-person {
-    display: flex;
+    @include flex;
     flex-direction: row;
     margin-bottom: em(50);
 

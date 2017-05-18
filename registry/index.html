@@ -17,14 +17,17 @@ title: Registry | Melissa &amp; Brett
     </div>
 </section>
 
-<section class="gallery">
+<section class="registry">
     <div class="container">
         <div class="inner-container">
             {% for item in site.data.registry %}
             <div class="block">
-                <span class="img">
-                    <img src="{{ item.img }}" alt="{{ item.alt }}" />
-                </span>
+                <div class="responsive-container">
+                    <a class="img" href="{{ item.link }}" target="_blank" title="View our registry at {{ item.title }}">
+                        <img src="{{ item.img }}" alt="{{ item.alt }}" />
+                        <span>View Registry <i class="fa fa-external-link" aria-hidden="true"></i></span>
+                    </a>
+                </div>
             </div>
             {% endfor %}
         </div>
