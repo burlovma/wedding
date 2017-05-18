@@ -34,7 +34,7 @@
       width: 100%;
 
       @include opacity(0);
-      @include custom-transition(opacity $animation-timing ease, transform $animation-timing ease);
+      @include custom-transition(opacity $animation-timing ease);
 
       &.lazy-loaded {
         @include opacity(1);

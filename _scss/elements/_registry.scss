@@ -23,7 +23,7 @@
     .img {
       align-items: center;
       @include flex;
-      justify-content: center;
+      justify-content: center; // TODO check on prefixes for align-items, justify-content, etc.
       flex-flow: column wrap;
       height: 100%;
       position: absolute;
