@@ -62,7 +62,7 @@ header {
   }
 
   nav {
-    align-items: center;
+    @include align-items(center);
     background: $white;
     @include flex;
     height: 100%;

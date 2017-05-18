@@ -19,7 +19,7 @@
   }
 
   .overlay-inner {
-    align-items: center;
+    @include align-items(center);
     @include flex;
     height: 100%;
     margin: 0 auto;
