@@ -51,7 +51,7 @@
     @include replace-text();
 
     i {
-      color: $white;
+      color: $dark-gray-color;
       font-size: 1.5rem;
 
       @include custom-transition(color $animation-timing ease);
@@ -59,7 +59,7 @@
 
     &:hover,
     &:focus {
-      i { color: $dark-gray-color; }
+      i { color: $white; }
     }
   }
 }
