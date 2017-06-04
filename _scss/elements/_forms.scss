@@ -11,13 +11,19 @@ form {
 
     @include appearance(none);
 
-    &.invalid { border-color: red; }
+    &.invalid {
+      border-color: $burnt-umber;
+      box-shadow: 0 0 2px $burnt-umber inset;
+    }
 
-    &:focus { border-color: $black; }
+    &:focus {
+      border-color: $black;
+      box-shadow: 0 0 2px $chrome-blue inset;
+    }
   }
 
   .validation {
-    color: red;
+    color: $red;
     display: none;
     font-weight: 600;
     padding: 5px 0;
@@ -182,7 +188,7 @@ form {
   }
 }
 
-p.error { color: red; }
+p.error { color: $red; }
 
 
 @include breakpoints(tablet) {

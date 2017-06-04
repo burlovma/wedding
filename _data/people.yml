@@ -43,6 +43,18 @@
 -
     img: http://placehold.it/400x300
     alt: "alt"
-    name: "Ben McDonald"
-    role: "Groomsman"
+    name: "Ashley Blue"
+    role: "Junior Bridesmaid"
+    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque sint, nihil dignissimos perferendis quod vero error voluptate deleniti cumque assumenda ad necessitatibus saepe asperiores. Culpa a facere cupiditate! Quod."
+-
+    img: http://placehold.it/400x300
+    alt: "alt"
+    name: "Makayla McDonald"
+    role: "Flower Girl"
+    info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque sint, nihil dignissimos perferendis quod vero error voluptate deleniti cumque assumenda ad necessitatibus saepe asperiores. Culpa a facere cupiditate! Quod."
+-
+    img: http://placehold.it/400x300
+    alt: "alt"
+    name: "Maya McDonald"
+    role: "Flower Girl"
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque sint, nihil dignissimos perferendis quod vero error voluptate deleniti cumque assumenda ad necessitatibus saepe asperiores. Culpa a facere cupiditate! Quod."

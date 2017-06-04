@@ -16,14 +16,12 @@ footer {
   }
 
   ul {
-    text-align: center;
+    margin-bottom: em(15);
 
     li {
       display: inline-block;
       padding: 0 10px;
     }
-
-    &:hover a i { @include opacity(.675); }
 
     a {
       display: block;
@@ -35,12 +33,12 @@ footer {
         color: $dark-gray-color;
         font-size: 1.5rem;
 
-        @include custom-transition(opacity $animation-timing ease);
+        @include custom-transition(color $animation-timing ease);
       }
 
       &:hover,
       &:focus {
-        i { @include opacity(1); }
+        i { color: $black; }
       }
     }
   }
