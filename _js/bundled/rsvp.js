@@ -18,46 +18,34 @@ var Validity = function () {
     function Validity(form) {
         var _this = this;
 
-        var submit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-        var normalSubmit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+        var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
 
         _classCallCheck(this, Validity);
 
-        var context = this;
-
-        context.validationFn = typeof form.checkValidity === 'function' ? function (el) {
-            return el.checkValidity();
-        } : function (el) {
-            return context.isValid(el);
-        };
-
-        Array.from(form.elements).forEach(function (el) {
+        Array.prototype.slice.call(form.elements).forEach(function (el) {
             _this.addListeners(el);
         });
 
-        form.validate = function () {
-            var i = 0,
-                invalid = 0,
-                len = void 0;
+        form.onsubmit = function (e) {
+            var invalid = 0;
+
+            e.preventDefault();
 
             // check all items once more on submit
-            Array.from(this.elements).forEach(function (el) {
-                console.log('validating once more? ' + el);
-                if (!context.markField(context.validationFn(el), el)) invalid++;
+            Array.prototype.slice.call(form.elements).forEach(function (el) {
+                if (!_this.markField(_this.validationFn(el), el)) invalid++;
             });
 
-            if (invalid > 0) return false;
-
-            // if you've gotten to this point, the form is good to go
-            if (normalSubmit) this.submit();else return true;
-        };
-
-        form.onsubmit = submit || function () {
-            if (!this.validate()) return false;
+            return invalid > 0 ? false : callback ? callback() : form.submit();
         };
     }
 
     _createClass(Validity, [{
+        key: 'validationFn',
+        value: function validationFn(el) {
+            return el.checkValidity() || this.isValid(el);
+        }
+    }, {
         key: 'addListeners',
         value: function addListeners(el) {
             var context = this;
@@ -159,6 +147,30 @@ var Helper = require('Helper'),
     var form = document.forms['rsvp-form'],
         toggleRow = document.querySelector('.field-row.expandable');
 
+    function callback() {
+        var elems = form.elements,
+            msg = 'new rsvp!\n\n';
+
+        msg += 'from: ' + elems.invitee_name.value + ' (email: ' + elems.invitee_email.value + ')\n\n';
+
+        if (elems.not_coming.checked) msg += '\n\nparty pooper: true\n\n';else msg += 'food selected: ' + elems.invitee_food.value;
+
+        if (elems.plus_one.checked) {
+            msg += '\n\nguest info:\n\n' + elems.guest_name.value + '\n\n';
+            msg += 'food selected: ' + elems.guest_food.value + '\n\n';
+        }
+
+        msg += 'personal message: ' + elems.message.value;
+
+        window.open('mailto:brettandmelissanolf@gmail.com?subject=RSVP&body=' + encodeURIComponent(msg));
+        // location.href = '/rsvp/';
+
+        Helper.addClass(document.querySelector('.rsvp-form'), 'hidden');
+        Helper.removeClass(document.querySelector('.thanks'), 'hidden');
+
+        if (elems.not_coming.checked) document.querySelector('.text').textContent = 'Sorry we won\'t see you on June 2nd.';else document.querySelector('.text').textContent = 'Can\'t wait to see you on June 2nd!';
+    }
+
     if (form) {
         form.elements.plus_one.addEventListener('click', function () {
             var el = void 0,
@@ -178,7 +190,7 @@ var Helper = require('Helper'),
             el.focus();
         });
 
-        new Validate(form);
+        new Validate(form, callback);
     }
 })();
 

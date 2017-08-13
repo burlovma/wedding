@@ -23,7 +23,7 @@
     @include flex;
     height: 100%;
     margin: 0 auto;
-    max-width: 600px;
+    max-width: em(650);
   }
 
   .yt-container {

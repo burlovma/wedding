@@ -5,7 +5,7 @@
     role: "Maid of Honor"
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque sint, nihil dignissimos perferendis quod vero error voluptate deleniti cumque assumenda ad necessitatibus saepe asperiores. Culpa a facere cupiditate! Quod."
 -
-    img: http://placehold.it/400x300
+    img: /images/wedding/wedding-party/chris.jpg
     alt: "alt"
     name: "Chris Nolf"
     role: "Best Man"
@@ -17,7 +17,7 @@
     role: "Bridesmaid"
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque sint, nihil dignissimos perferendis quod vero error voluptate deleniti cumque assumenda ad necessitatibus saepe asperiores. Culpa a facere cupiditate! Quod."
 -
-    img: http://placehold.it/400x300
+    img: /images/wedding/wedding-party/shane.jpg
     alt: "alt"
     name: "Shane Burch"
     role: "Groomsman"
@@ -29,7 +29,7 @@
     role: "Bridesmaid"
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque sint, nihil dignissimos perferendis quod vero error voluptate deleniti cumque assumenda ad necessitatibus saepe asperiores. Culpa a facere cupiditate! Quod."
 -
-    img: http://placehold.it/400x300
+    img: /images/wedding/wedding-party/jared.jpg
     alt: "alt"
     name: "Jared Frankel"
     role: "Groomsman"
@@ -41,7 +41,7 @@
     role: "Bridesmaid"
     info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo neque sint, nihil dignissimos perferendis quod vero error voluptate deleniti cumque assumenda ad necessitatibus saepe asperiores. Culpa a facere cupiditate! Quod."
 -
-    img: http://placehold.it/400x300
+    img: /images/wedding/wedding-party/ashley.jpg
     alt: "alt"
     name: "Ashley Blue"
     role: "Junior Bridesmaid"

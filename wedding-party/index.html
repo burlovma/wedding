@@ -22,19 +22,33 @@ title: Wedding Party | Melissa &amp; Brett
         <div class="inner-container special">
 
             {% for item in site.data.people %}
-            <div class="party-person hide">
-                <div class="img-container unseen">
-                    <div class="img">
-                        <img src="{{ item.img }}" alt="{{ item.alt }}" />
-                    </div>
-                </div>
+            {% assign mod = forloop.index | modulo: 2 %}
+             <div class="party-person hide">
+                {% if mod == 0 %}
                 <div class="person-info unseen">
                     <h4>{{ item.name }}</h4>
                     <p class="slightly-larger"><em>{{ item.role }}</em></p>
                     <p>{{ item.info }}</p>
                 </div>
-            </div>
-            {% endfor %}
+                <div class="img-container unseen">
+                    <div class="img">
+                        <img src="{{ item.img }}" alt="{{ item.alt }}" />
+                    </div>
+                </div>
+                {% else %}
+                 <div class="img-container unseen">
+                     <div class="img">
+                         <img src="{{ item.img }}" alt="{{ item.alt }}" />
+                     </div>
+                 </div>
+                 <div class="person-info unseen">
+                     <h4>{{ item.name }}</h4>
+                     <p class="slightly-larger"><em>{{ item.role }}</em></p>
+                     <p>{{ item.info }}</p>
+                 </div>
+                {% endif %}
+             </div>
+             {% endfor %}
 
         </div>
     </div>

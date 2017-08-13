@@ -17,8 +17,6 @@
     width: 50%;
   }
 
-  .download { display: none; }
-
   .img {
     display: block;
     height: 0;
@@ -133,29 +131,7 @@
         }
       }
 
-      .download {
-        background: transparentize($black, .75);
-        color: $white;
-        display: block;
-        position: absolute;
-        right: em(.5);
-        text-align: center;
-        top: em(-26);
-        width: em(30);
-        z-index: 1;
-
-        @include opacity(0);
-        @include custom-transition(opacity $animation-timing ease, top $animation-timing ease);
-      }
-
-      &:hover {
-        .download {
-          @include opacity(1);
-          top: 0;
-        }
-
-        .caption-container { top: 0; }
-      }
+      &:hover .caption-container { top: 0; }
     }
   }
 }

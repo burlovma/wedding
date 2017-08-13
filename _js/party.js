@@ -43,7 +43,7 @@ var Helper = require('Helper');
 
         Helper.removeClass(parent, 'hide');
 
-        Array.from(items).forEach(item => {
+        Array.prototype.slice.call(items).forEach(item => {
             Helper.removeClass(item, 'unseen');
             Helper.addClass(item, 'seen');
         });

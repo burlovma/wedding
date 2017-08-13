@@ -10,7 +10,6 @@ footer {
     text-transform: uppercase;
 
     span {
-      vertical-align: middle;
       @include custom-transition(font-size $animation-timing ease);
     }
   }

@@ -5,41 +5,30 @@ var Helper = require('./Helper');
 
 class Validity {
 
-    constructor(form, submit = '', normalSubmit = false) {
-        let context = this;
+    constructor(form, callback = null) {
 
-        context.validationFn = typeof form.checkValidity === 'function' ?
-            function(el) { return el.checkValidity(); } :
-            function(el) { return context.isValid(el); };
-
-        Array.from(form.elements).forEach(el => {
+        Array.prototype.slice.call(form.elements).forEach(el => {
             this.addListeners(el);
         });
 
-        form.validate = function() {
-            let i = 0,
-                invalid = 0,
-                len;
+        form.onsubmit = e => {
+            let invalid = 0;
+
+            e.preventDefault();
 
             // check all items once more on submit
-            Array.from(this.elements).forEach(el => {
-                console.log(`validating once more? ${el}`);
-                if (!context.markField(context.validationFn(el), el))
-                    invalid++;
+            Array.prototype.slice.call(form.elements).forEach(el => {
+                if (!this.markField(this.validationFn(el), el)) invalid++;
             });
 
-            if (invalid > 0) return false;
-
-            // if you've gotten to this point, the form is good to go
-            if (normalSubmit)
-                this.submit();
-            else
-                return true;
+            return (invalid > 0) ?
+                false :
+                callback ? callback() : form.submit();
         };
+    }
 
-        form.onsubmit = submit || function () {
-            if (!this.validate()) return false;
-        };
+    validationFn(el) {
+        return el.checkValidity() || this.isValid(el);
     }
 
     addListeners(el) {

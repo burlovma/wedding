@@ -1,3 +1,98 @@
+@-webkit-keyframes fadeInLeft {
+  0% {
+    left: -20%;
+    opacity: 0;
+  }
+
+  50% {
+    left: 10%;
+    opacity: .5;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    left: -20%;
+    opacity: 0;
+  }
+
+  50% {
+    left: 10%;
+    opacity: .5;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    right: -20%;
+    opacity: 0;
+  }
+
+  50% {
+    right: 10%;
+    opacity: .5;
+  }
+
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    right: -20%;
+    opacity: 0;
+  }
+
+  50% {
+    right: 10%;
+    opacity: .5;
+  }
+
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+// @-webkit-keyframes fadeInUp {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, 500px, 0);
+//             transform: translate3d(0, 500px, 0);
+//   }
+
+//   to {
+//     opacity: 1;
+//     -webkit-transform: none;
+//             transform: none;
+//   }
+// }
+
+// @keyframes fadeInUp {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, 500px, 0);
+//             transform: translate3d(0, 500px, 0);
+//   }
+
+//   to {
+//     opacity: 1;
+//     -webkit-transform: none;
+//             transform: none;
+//   }
+// }
 
 
 
@@ -32,7 +127,6 @@
 @include breakpoints(tablet) {
   .party-person {
     @include flex;
-    flex-direction: row;
     margin-bottom: em(50);
 
     > div:first-child { margin-bottom: 0; }
@@ -42,13 +136,8 @@
     > div:last-child,
     > div:last-child h4 { text-align: left; }
 
-    .img-container { max-width: 400px; }
-
     .img-container,
-    .person-info {
-      padding: 0;
-      width: 50%;
-    }
+    .person-info { min-width: 50%; }
 
     .img {
       height: 0;
@@ -66,48 +155,26 @@
       }
     }
 
-    > div {
-      position: relative;
-      @include custom-transition(all $super-slow-animation-timing ease);
+    > div { position: relative; }
 
-      &:first-child { left: -20%; }
-
-      &:last-child {
-        padding-left: 20px;
-        right: -20%;
-      }
-    }
-
-    &:nth-child(even) {
-      > div:first-child {
-        left: 70%;
-      }
-      > div:last-child {
-        padding-left: 0;
-        padding-right: 20px;
-        right: 70%;
-      }
-    }
-
-    .unseen {
-      @include opacity(0);
-    }
+    .unseen { visibility: hidden; }
 
     .seen {
+      visibility: visible;
 
-      &:first-child { left: 0; }
+      // &.img-container {
+      //   -webkit-animation: fadeInUp $be-patient 1;
+      //           animation: fadeInUp $be-patient 1;
+      // }
 
-      &:last-child { right: 0; }
-
-      @include opacity(1);
-    }
-
-    &:nth-child(even) {
-      .seen:first-child {
-        left: 49.5%;
+      &:first-child {
+        -webkit-animation: fadeInLeft $be-patient 1;
+                animation: fadeInLeft $be-patient 1;
       }
-      .seen:last-child {
-        right: 49.5%;
+
+      &:last-child {
+        -webkit-animation: fadeInRight $be-patient 1;
+                animation: fadeInRight $be-patient 1;
       }
     }
   }
